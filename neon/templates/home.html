@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src={% static "js/materialize.js" %}></script>
     <title>Document</title>
     <style>
@@ -13,57 +15,56 @@
             background: #ededed;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
 </head>
 
 <body>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper blue">
-                <a href="#" class="brand-logo" style="padding-left: 5px;">Neon</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <div class="chip">
-                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
-                            {{student.student_id}}
-                        </div>
-                    </li>
-                    <li><a href="/login/logout">Log out</a></li>
-                </ul>
+    <nav>
+        <div class="nav-wrapper blue z-depth-3">
+            <a href="#!" class="brand-logo" style="padding-left: 5px;">Neon</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="chip">
+                        <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                        {{student.student_id}}
+                    </div>
+                </li>
+                <li><a href="/login/logout">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="#name"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="#email"><span class="white-text email">{{student.student_id}}</span></a>
             </div>
-        </nav>
-    </div>
+        </li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
     <div class="container">
         <div class="row">
-            <div class="col l10 offset-l1">
-                <div class="card">
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
                     <div class="card-content">
-                        <span class="card-title">STUDENT PROFILE</span>
-                        <table class="highlight responsive-table">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Student Profile
+                            <a class="waves-effect waves-light btn right"><i
+                                    class="material-icons right">arrow_forward</i>See More</a>
+                        </span>
+                        <table class="highlight">
                             <tbody>
-                                <tr>
-                                    <td>DDU REPORTING DATE</td>
-                                    <td>{{student.ddu_reporting_date}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ADMISSION TYPE</td>
-                                    <td>{{student.admission_type}}</td>
-                                </tr>
-                                <tr>
-                                    <td>FIRST NAME</td>
-                                    <td>{{student.first_name}}</td>
-                                </tr>
-                                <tr>
-                                    <td>MIDDLE NAME</td>
-                                    <td>{{student.middle_name}}</td>
-                                </tr>
-                                <tr>
-                                    <td>LAST NAME</td>
-                                    <td>{{student.last_name}}</td>
-                                </tr>
-                                <tr>
-                                    <td>NAME FORMAT</td>
-                                    <td>{{student.name_format}}</td>
-                                </tr>
+
                                 <tr>
                                     <td>FULL NAME</td>
                                     {% if student.name_format == 'LFM'%}
@@ -73,40 +74,20 @@
                                     {% endif %}
                                 </tr>
                                 <tr>
-                                    <td>GENDER</td>
-                                    <td>{{student.gender}}</td>
+                                    <td>STUDENT CODE</td>
+                                    <td>{{student.student_id}}</td>
                                 </tr>
                                 <tr>
                                     <td>BIRTH DATE</td>
                                     <td>{{student.birth_date}}</td>
                                 </tr>
                                 <tr>
-                                    <td>BIRTH PLACE</td>
-                                    <td>{{student.birth_place}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ACPC SEAT ALLOTMENT DATE</td>
-                                    <td>{{student.acpc_seat_allotment_date}}</td>
-                                </tr>
-                                <tr>
-                                    <td>IS D2d</td>
-                                    <td>{{student.is_d2d}}</td>
-                                </tr>
-                                <tr>
-                                    <td>ENROLLMENT YEAR</td>
-                                    <td>{{student.enrollment_year}}</td>
+                                    <td>ADMISSION TYPE</td>
+                                    <td>{{student.admission_type}}</td>
                                 </tr>
                                 <tr>
                                     <td>DEGREE</td>
                                     <td>{{student.degree}}</td>
-                                </tr>
-                                <tr>
-                                    <td>QUALIFYING EXAM ROLLNO</td>
-                                    <td>{{student.qualifying_exam_rollno}}</td>
-                                </tr>
-                                <tr>
-                                    <td>SESSION TYPE</td>
-                                    <td>{{student.session_type}}</td>
                                 </tr>
                                 <tr>
                                     <td>SESSION NO</td>
@@ -116,37 +97,28 @@
                                     <td>BATCH YEAR</td>
                                     <td>{{student.batch_year}}</td>
                                 </tr>
-                                <tr>
-                                    <td>STUDENT CODE</td>
-                                    <td>{{student.student_id}}</td>
-                                </tr>
-                                <tr>
-                                    <td>OLD STUDENT CODE</td>
-                                    <td>{{student.old_student_code}}</td>
-                                </tr>
-                                <tr>
-                                    <td>STUDENT ALLOTMENT</td>
-                                    <td>{{student.students_allotment}}</td>
-                                </tr>
-                                <tr>
-                                    <td>MERIT RANK</td>
-                                    <td>{{student.merit_rank}}</td>
-                                </tr>
-                                <tr>
-                                    <td>RE SHUFFLE STATUS</td>
-                                    <td>{{student.re_shuffle_status}}</td>
-                                </tr>
-                                <tr>
-                                    <td>RE SHUFFLE PHASE</td>
-                                    <td>{{student.re_shuffle_phase}}</td>
-                                </tr>
-                                <tr>
-                                    <td>CAST CATEGORY CODE</td>
-                                    <td>{{student.cast_category_code}}</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Exam Results
+                            <a class="waves-effect waves-light btn right"><i
+                                    class="material-icons right">arrow_forward</i>See More</a>
+                        </span>                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Course Details
+                            <a class="waves-effect waves-light btn right"><i
+                                    class="material-icons right">arrow_forward</i>See More</a>
+                        </span>                    </div>
                 </div>
             </div>
         </div>
