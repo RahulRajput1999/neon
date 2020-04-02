@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src={% static "js/materialize.js" %}></script>
-    <title>Document</title>
+    <title>Home</title>
     <style>
         body {
             background: #ededed;
@@ -24,10 +24,15 @@
 </head>
 
 <body>
+<div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper blue z-depth-3">
-            <a href="#!" class="brand-logo" style="padding-left: 5px;">Neon</a>
+            <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                <li><a href="/student" style="font-size:20px">Exam Results</a></li>
+                <li><a href="/student" style="font-size:20px">Course Details</a></li>
+            </ul>
             <ul class="right hide-on-med-and-down">
                 <li>
                     <div class="chip">
@@ -39,7 +44,7 @@
             </ul>
         </div>
     </nav>
-
+</div>
     <ul class="sidenav" id="mobile-demo">
         <li>
             <div class="user-view">
@@ -47,24 +52,23 @@
                     <img src={% static "assets/images/office.jpg" %}>
                 </div>
                 <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
-                <a href="#name"><span class="white-text name">{{ student.first_name }}</span></a>
-                <a href="#email"><span class="white-text email">{{student.student_id}}</span></a>
+                <a href="/student"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="/student"><span class="white-text email">{{student.student_id}}</span></a>
             </div>
         </li>
+        <li><a href="/student">Exam Results</a></li>
+        <li><a href="/student">Course Details</a></li>
         <li><a href="/login/logout">Log out</a></li>
     </ul>
-    <div class="container">
+    <div class="container" style="padding-top:30px">
         <div class="row">
             <div class="col l6 m12 s12">
                 <div class="card z-depth-3">
                     <div class="card-content">
                         <span class="card-title grey lighten-2" style="padding: 14px;">Student Profile
-                            <a class="waves-effect waves-light btn right"><i
-                                    class="material-icons right">arrow_forward</i>See More</a>
                         </span>
                         <table class="highlight">
                             <tbody>
-
                                 <tr>
                                     <td>FULL NAME</td>
                                     {% if student.name_format == 'LFM'%}
@@ -74,12 +78,16 @@
                                     {% endif %}
                                 </tr>
                                 <tr>
-                                    <td>STUDENT CODE</td>
-                                    <td>{{student.student_id}}</td>
+                                    <td>GENDER</td>
+                                    <td>{{student.gender}}</td>
                                 </tr>
                                 <tr>
                                     <td>BIRTH DATE</td>
                                     <td>{{student.birth_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td>BIRTH PLACE</td>
+                                    <td>{{student.birth_place}}</td>
                                 </tr>
                                 <tr>
                                     <td>ADMISSION TYPE</td>
@@ -90,14 +98,57 @@
                                     <td>{{student.degree}}</td>
                                 </tr>
                                 <tr>
-                                    <td>SESSION NO</td>
-                                    <td>{{student.session_no}}</td>
+                                    <td>STUDENT CODE</td>
+                                    <td>{{student.student_id}}</td>
                                 </tr>
                                 <tr>
                                     <td>BATCH YEAR</td>
                                     <td>{{student.batch_year}}</td>
                                 </tr>
-
+                                <tr>
+                                    <td>DDU REPORTING DATE</td>
+                                    <td>{{student.ddu_reporting_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ACPC SEAT ALLOTMENT DATE</td>
+                                    <td>{{student.acpc_seat_allotment_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td>IS D2D</td>
+                                    <td>{{student.is_d2d}}</td>
+                                </tr>
+                                <tr>
+                                    <td>QUALIFYING EXAM ROLL NO</td>
+                                    <td>{{student.qualifying_exam_rollno}}</td>
+                                </tr>
+                                <tr>
+                                    <td>SESSION TYPE</td>
+                                    <td>{{student.session_type}}</td>
+                                </tr>
+                                <tr>
+                                    <td>SESSION NO</td>
+                                    <td>{{student.session_no}}</td>
+                                </tr>
+                                <tr>
+                                    <td>OLD STUDENT CODE</td>
+                                    <td>{{student.old_student_code}}</td>
+                                </tr>
+                                <tr>
+                                    <td>STUDENT ALLOTMENT</td>
+                                    <td>{{student.students_allotment}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MERIT RANK</td>
+                                    <td>{{student.merit_rank}}</td>
+                                </tr>
+                                <tr>
+                                    <td>RE SHUFFLE STATUS</td>
+                                    <td>{{student.re_shuffle_status}}</td>
+                                </tr>
+                                <tr>
+                                    <td>RE SHUFFLE PHASE</td>
+                                    <td>{{student.re_shuffle_phase}}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -106,22 +157,170 @@
             <div class="col l6 m12 s12">
                 <div class="card z-depth-3">
                     <div class="card-content">
-                        <span class="card-title grey lighten-2" style="padding: 14px;">Exam Results
-                            <a class="waves-effect waves-light btn right"><i
-                                    class="material-icons right">arrow_forward</i>See More</a>
-                        </span>                    </div>
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Other Information
+                        </span>
+                        <table class="highlight">
+                            <tbody>
+                                <tr>
+                                    <td>CAST CATEGORY CODE</td>
+                                    <td>{{student.cast_category_code}}</td>
+                                </tr>
+                                <tr>
+                                    <td>SUB CAST</td>
+                                    <td>{{student.sub_cast}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MARITAL STATUS</td>
+                                    <td>{{student.marital_status}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MOTHER TONGUE</td>
+                                    <td>{{student.mother_tongue}}</td>
+                                </tr>
+                                <tr>
+                                    <td>NATIONALITY</td>
+                                    <td>{{student.nationality}}</td>
+                                </tr>
+                                <tr>
+                                    <td>BLOOD GROUP</td>
+                                    <td>{{student.blood_group}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col l6 m12 s12">
                 <div class="card z-depth-3">
                     <div class="card-content">
-                        <span class="card-title grey lighten-2" style="padding: 14px;">Course Details
-                            <a class="waves-effect waves-light btn right"><i
-                                    class="material-icons right">arrow_forward</i>See More</a>
-                        </span>                    </div>
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Guardian information
+                        </span>
+                        <table class="highlight">
+                            <tbody>
+                                <tr>
+                                    <td>RELATION TYPE</td>
+                                    <td>{{student.relation_type}}</td>
+                                </tr>
+                                <tr>
+                                    <td>NAME</td>
+                                    <td>{{student.full_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>OCCUPATION</td>
+                                    <td>{{student.occupation}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ORGANIZATION</td>
+                                    <td>{{student.organization_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ANNUAL INCOME</td>
+                                    <td>{{student.annual_income}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Contact Details
+                        </span>
+                        <table class="highlight">
+                            <tbody>
+                                <tr>
+                                    <td>PHONE NO</td>
+                                    <td>{{student.phone_no}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MOBILE NO</td>
+                                    <td>{{student.mobile_no}}</td>
+                                </tr>
+                                <tr>
+                                    <td>EMAIL</td>
+                                    <td>{{student.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Permanent Address
+                        </span>
+                        <table class="highlight">
+                            <tbody>
+                                <tr>
+                                    <td>ADDRESS</td>
+                                    <td>{{student.address1}},<br/>{{student.address2}},<br/>{{student.address3}}</td>
+                                </tr>
+                                <tr>
+                                    <td>PIN CODE</td>
+                                    <td>{{student.pin_code}}</td>
+                                </tr>
+                                <tr>
+                                    <td>CITY</td>
+                                    <td>{{student.city}}</td>
+                                </tr>
+                                <tr>
+                                    <td>STATE</td>
+                                    <td>{{student.state}}</td>
+                                </tr>
+                                <tr>
+                                    <td>COUNTRY</td>
+                                    <td>{{student.country}}</td>
+                                </tr>
+                                {% if student.phone_no %}
+                                <tr>
+                                    <td>PHONE NO</td>
+                                    <td>{{student.phone_no}}</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Local Address
+                        </span>
+                        <table class="highlight">
+                            <tbody>
+                                <tr>
+                                    <td>ADDRESS</td>
+                                    <td>{{student.local_address1}},<br/>{{student.local_address2}},<br/>{{student.local_address3}}</td>
+                                </tr>
+                                <tr>
+                                    <td>CITY</td>
+                                    <td>{{student.local_city}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MOBILE NO</td>
+                                    <td>{{student.local_mobile_no}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container" style="padding:30px;max-width:400px">
+            <div class="col l6 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content" style="padding:0px">
+                        <span class="card-title blue" style="padding: 14px;">
+                            <a href="#" style="color:white"><i class="material-icons right">edit</i>Edit Details</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
     </div>
 </body>
 
