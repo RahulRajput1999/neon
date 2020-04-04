@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Document</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper blue z-depth-3">
+            <a href="/student" class="brand-logo" style="padding-left: 5px;">Neon</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <div class="chip">
+                        <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                        {{student.student_id}}
+                    </div>
+                </li>
+                <li><a href="/login/logout">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="#name"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="#email"><span class="white-text email">{{student.student_id}}</span></a>
+            </div>
+        </li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <form action="/student/saveDetails/" method="POST">
+                {% csrf_token %}
+                <div class="col l12 m12 s12">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">PERSONAL INFORMATION</span>
+                            <div class="input-field">
+                                <input id="blood_group" value={{ student.blood_group }} name="blood_group" type="text"
+                                    class="validate">
+                                <label for="blood_group">BLOOD GROUP</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l12 m12 s12">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">GUARDIAN INFORMATION</span>
+                            <div class="input-field">
+                                <input id="relation_type" value="{{ student.relation_type }}" name="relation_type"
+                                    type="text" class="validate" disabled>
+                                <label for="relation_type">RELATION TYPE</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="full_name" value="{{ student.full_name }}" name="full_name" type="text"
+                                    class="validate" disabled>
+                                <label for="full_name">FULL NAME</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="occupation" value="{{ student.occupation }}" name="occupation" type="text"
+                                    class="validate">
+                                <label for="occupation">OCCUPATION</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="organization_name" value="{{ student.organization_name }}"
+                                    name="organization_name" type="text" class="validate">
+                                <label for="organization_name">ORGANIZATION NAME</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="annual_income" value="{{ student.annual_income }}" name="annual_income"
+                                    type="text" class="validate">
+                                <label for="annual_income">ANNUAL INCOME</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l12 m12 s12">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">CONTACT INFORMATION</span>
+                            <div class="input-field">
+                                <input id="address1" value="{{ student.address1 }}" name="address1" type="text"
+                                    class="validate">
+                                <label for="address1">ADDRESS1</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="address2" value="{{ student.address2 }}" name="address2" type="text"
+                                    class="validate">
+                                <label for="address2">ADDRESS2</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="address3" value="{{ student.address3 }}" name="address3" type="text"
+                                    class="validate">
+                                <label for="address3">ADDRESS3</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="city" value="{{ student.city }}" name="city" type="text" class="validate">
+                                <label for="city">CITY</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="pin_code" value="{{ student.pin_code }}" name="pin_code" type="text"
+                                    class="validate">
+                                <label for="pin_code">PIN CODE</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="state" value="{{ student.state }}" name="state" type="text" class="validate">
+                                <label for="state">STATE</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="country" value="{{ student.country }}" name="country" type="text"
+                                    class="validate">
+                                <label for="country">COUNTRY</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="phone_no" value="{{ student.phone_no }}" name="phone_no" type="text"
+                                    class="validate">
+                                <label for="phone_no">PHONE NO</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="mobile_no" value="{{ student.mobile_no }}" name="mobile_no" type="text"
+                                    class="validate">
+                                <label for="mobile_no">MOBILE NO</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="email" value="{{ student.email }}" name="email" type="text" class="validate">
+                                <label for="email">EMAIL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l12 m12 s12">
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">LOCAL ADDRESS
+                                INFORMATION</span>
+                            <div class="input-field">
+                                <input id="local_address1" value="{{ student.local_address1 }}" name="local_address1"
+                                    type="text" class="validate">
+                                <label for="local_address1">LOCAL ADDRESS1</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="local_address2" value="{{ student.local_address2 }}" name="local_address2"
+                                    type="text" class="validate">
+                                <label for="local_address2">LOCAL ADDRESS2</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="local_address3" value="{{ student.local_address3 }}" name="local_address3"
+                                    type="text" class="validate">
+                                <label for="local_address3">LOCAL ADDRESS3</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="local_city" value="{{ student.local_city }}" name="local_city" type="text"
+                                    class="validate">
+                                <label for="local_city">LOCAL CITY</label>
+                            </div>
+                            <div class="input-field">
+                                <input id="local_mobile_no" value="{{ student.local_mobile_no }}" name="local_mobile_no"
+                                    type="text" class="validate">
+                                <label for="local_mobile_no">LOCAL MOBILE NO</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l12 m12 s12">
+                    <button type="submit" class="waves-effect waves-light btn"><i class="material-icons right">save</i>Save
+                        Details</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container" style="padding:30px;max-width:400px">
+        
+    </div>
+</body>
+
+</html>
