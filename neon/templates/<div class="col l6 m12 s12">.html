@@ -1,0 +1,115 @@
+<div class="col l6 m12 s12">
+    <div class="card z-depth-3">
+        <div class="card-content">
+            <span class="card-title">STUDENT PROFILE</span>
+            <table class="highlight">
+                <tbody>
+                    <tr>
+                        <td>DDU REPORTING DATE</td>
+                        <td>{{student.ddu_reporting_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>ADMISSION TYPE</td>
+                        <td>{{student.admission_type}}</td>
+                    </tr>
+                    <tr>
+                        <td>FIRST NAME</td>
+                        <td>{{student.first_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>MIDDLE NAME</td>
+                        <td>{{student.middle_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>LAST NAME</td>
+                        <td>{{student.last_name}}</td>
+                    </tr>
+                    <tr>
+                        <td>NAME FORMAT</td>
+                        <td>{{student.name_format}}</td>
+                    </tr>
+                    <tr>
+                        <td>FULL NAME</td>
+                        {% if student.name_format == 'LFM'%}
+                        <td>{{student.last_name}} {{student.first_name}} {{student.middle_name}}</td>
+                        {% elif student.name_format == 'FML' %}
+                        <td>{{student.first_name}} {{student.middle_name}} {{student.last_name}}</td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        <td>GENDER</td>
+                        <td>{{student.gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>BIRTH DATE</td>
+                        <td>{{student.birth_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>BIRTH PLACE</td>
+                        <td>{{student.birth_place}}</td>
+                    </tr>
+                    <tr>
+                        <td>ACPC SEAT ALLOTMENT DATE</td>
+                        <td>{{student.acpc_seat_allotment_date}}</td>
+                    </tr>
+                    <tr>
+                        <td>IS D2d</td>
+                        <td>{{student.is_d2d}}</td>
+                    </tr>
+                    <tr>
+                        <td>ENROLLMENT YEAR</td>
+                        <td>{{student.enrollment_year}}</td>
+                    </tr>
+                    <tr>
+                        <td>DEGREE</td>
+                        <td>{{student.degree}}</td>
+                    </tr>
+                    <tr>
+                        <td>QUALIFYING EXAM ROLLNO</td>
+                        <td>{{student.qualifying_exam_rollno}}</td>
+                    </tr>
+                    <tr>
+                        <td>SESSION TYPE</td>
+                        <td>{{student.session_type}}</td>
+                    </tr>
+                    <tr>
+                        <td>SESSION NO</td>
+                        <td>{{student.session_no}}</td>
+                    </tr>
+                    <tr>
+                        <td>BATCH YEAR</td>
+                        <td>{{student.batch_year}}</td>
+                    </tr>
+                    <tr>
+                        <td>STUDENT CODE</td>
+                        <td>{{student.student_id}}</td>
+                    </tr>
+                    <tr>
+                        <td>OLD STUDENT CODE</td>
+                        <td>{{student.old_student_code}}</td>
+                    </tr>
+                    <tr>
+                        <td>STUDENT ALLOTMENT</td>
+                        <td>{{student.students_allotment}}</td>
+                    </tr>
+                    <tr>
+                        <td>MERIT RANK</td>
+                        <td>{{student.merit_rank}}</td>
+                    </tr>
+                    <tr>
+                        <td>RE SHUFFLE STATUS</td>
+                        <td>{{student.re_shuffle_status}}</td>
+                    </tr>
+                    <tr>
+                        <td>RE SHUFFLE PHASE</td>
+                        <td>{{student.re_shuffle_phase}}</td>
+                    </tr>
+                    <tr>
+                        <td>CAST CATEGORY CODE</td>
+                        <td>{{student.cast_category_code}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

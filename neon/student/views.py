@@ -26,3 +26,20 @@ def index(request):
             return render(request,'home.html',c)
         else:
             return HttpResponseRedirect('/login/invalidlogin')
+
+@login_required(login_url='/login/')
+def details(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        id = request.user.id
+        user = User.objects.get(id=id)
+        if user is not None:
+            username = user.username
+            student = Student.objects.filter(student_id = username)
+            count = student.count()
+            if int(count) > 0:
+                c['student'] = student[0]
+            return render(request,'student_details.html',c)
+        else:
+            return HttpResponseRedirect('/login/invalidlogin')
