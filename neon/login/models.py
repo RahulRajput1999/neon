@@ -22,8 +22,8 @@ class semester(models.Model):
 
 class Student(models.Model):
     student_id = models.CharField(max_length=30, primary_key='true')
-    ddu_reporting_date = models.CharField(max_length=30, blank=True, null=True)
-    admission_type = models.DateTimeField(blank=True, null=True)
+    admission_type = models.CharField(max_length=30, blank=True, null=True)
+    ddu_reporting_date = models.DateTimeField(blank=True, null=True)
     first_name = models.CharField(max_length=30, blank=True, null=True)
     middle_name = models.CharField(max_length=30, blank=True, null=True)
     last_name = models.CharField(max_length=30, blank=True, null=True)

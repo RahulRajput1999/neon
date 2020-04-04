@@ -26,9 +26,12 @@ def auth_view(request):  # view to aquthenticate the user...
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     user = auth.authenticate(username=username, password=password)
-    student = Student.objects.filter(student_id=username)
-    count = student.count()
-    if user is not None:
+    if user is not None and user.is_staff:
+        auth.login(request, user)
+        return HttpResponseRedirect('/staff/')
+    elif user is not None and not user.is_staff:
+        student = Student.objects.filter(student_id=username)
+        count = student.count()
         auth.login(request, user)
         if int(count) > 0:
             return HttpResponseRedirect('/student/')

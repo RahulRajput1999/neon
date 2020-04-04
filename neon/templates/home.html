@@ -24,27 +24,27 @@
 </head>
 
 <body>
-<div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper blue z-depth-3">
-            <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="left hide-on-med-and-down" style="padding-left:100px">
-                <li><a href="/student" style="font-size:20px">Exam Results</a></li>
-                <li><a href="/student" style="font-size:20px">Course Details</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li>
-                    <div class="chip">
-                        <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
-                        {{student.student_id}}
-                    </div>
-                </li>
-                <li><a href="/login/logout">Log out</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student" style="font-size:20px">Exam Results</a></li>
+                    <li><a href="/student" style="font-size:20px">Course Details</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{student.student_id}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <ul class="sidenav" id="mobile-demo">
         <li>
             <div class="user-view">
@@ -255,7 +255,7 @@
                             <tbody>
                                 <tr>
                                     <td>ADDRESS</td>
-                                    <td>{{student.address1}},<br/>{{student.address2}},<br/>{{student.address3}}</td>
+                                    <td>{{student.address1}},<br />{{student.address2}},<br />{{student.address3}}</td>
                                 </tr>
                                 <tr>
                                     <td>PIN CODE</td>
@@ -293,7 +293,8 @@
                             <tbody>
                                 <tr>
                                     <td>ADDRESS</td>
-                                    <td>{{student.local_address1}},<br/>{{student.local_address2}},<br/>{{student.local_address3}}</td>
+                                    <td>{{student.local_address1}},<br />{{student.local_address2}},<br />{{student.local_address3}}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>CITY</td>
@@ -312,15 +313,16 @@
         </div>
     </div>
     <div class="container" style="padding:30px;max-width:400px">
-            <div class="col l6 m12 s12">
-                <div class="card z-depth-3">
-                    <div class="card-content" style="padding:0px">
-                        <span class="card-title blue" style="padding: 14px;">
-                            <a href="#" style="color:white"><i class="material-icons right">edit</i>Edit Details</a>
-                        </span>
-                    </div>
+        <div class="col l6 m12 s12">
+            <div class="card z-depth-3">
+                <div class="card-content" style="padding:0px">
+                    <span class="card-title blue" style="padding: 14px;">
+                        <a href="editDetails" style="color:white"><i class="material-icons right">edit</i>Edit
+                            Details</a>
+                    </span>
                 </div>
             </div>
+        </div>
     </div>
 </body>
 
