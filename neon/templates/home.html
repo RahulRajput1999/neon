@@ -30,8 +30,8 @@
                 <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="left hide-on-med-and-down" style="padding-left:100px">
-                    <li><a href="/student" style="font-size:20px">Exam Results</a></li>
-                    <li><a href="/student" style="font-size:20px">Course Details</a></li>
+                    <li><a href="/student/examResults" style="font-size:20px">Exam Results</a></li>
+                    <li><a href="/student/courseDetails" style="font-size:20px">Course Details</a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down">
                     <li>
@@ -52,12 +52,12 @@
                     <img src={% static "assets/images/office.jpg" %}>
                 </div>
                 <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
-                <a href="/student"><span class="white-text name">{{ student.first_name }}</span></a>
-                <a href="/student"><span class="white-text email">{{student.student_id}}</span></a>
+                <a href="#"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="#"><span class="white-text email">{{student.student_id}}</span></a>
             </div>
         </li>
-        <li><a href="/student">Exam Results</a></li>
-        <li><a href="/student">Course Details</a></li>
+        <li><a href="/student/examResults">Exam Results</a></li>
+        <li><a href="/student/courseDetails">Course Details</a></li>
         <li><a href="/login/logout">Log out</a></li>
     </ul>
     <div class="container" style="padding-top:30px">

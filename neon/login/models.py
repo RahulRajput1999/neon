@@ -3,21 +3,53 @@ import django.utils.timezone
 
 
 # Create your models here.
+class Program(models.Model):
+    program_code = models.CharField(max_length=10, primary_key='true')
+    institute_name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
+    alias = models.CharField(max_length=30)
+    program_type = models.CharField(max_length=30)
+    session_type = models.CharField(max_length=30)
+    no_of_sess = models.IntegerField(default=0)
+    no_of_year = models.IntegerField(default=0)
+    eligibility_criteria = models.CharField(max_length=30)
+    result_type = models.CharField(max_length=30)
+    total_sessional = models.IntegerField(default=0)
+    compulsory_sessional = models.IntegerField(default=0)
 
-class subject(models.Model):
-    subject_id = models.CharField(null=False, max_length=5, primary_key='true')
-    subject_name = models.CharField(null=False, max_length=30)
-    subject_credit = models.BigIntegerField(null=False)
-    subject_secured_score = models.BigIntegerField(default=0)
-    subject_total_score = models.BigIntegerField(null=False)
-    subject_grade = models.CharField(max_length=10, default="")
+
+class Course(models.Model):
+    subject_code = models.CharField(max_length=10, primary_key='true')
+    name = models.CharField(max_length=50)
+    alias = models.CharField(max_length=30)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE)
+    rec_status = models.CharField(max_length=10)
+    session = models.IntegerField(default=0)
+    elective = models.CharField(max_length=10)
+    credit = models.IntegerField(default=0)
+    th_min_pass1 = models.IntegerField(default=0)
+    th_min_pass2 = models.IntegerField(default=0)
+    th_total = models.IntegerField(default=0)
+    sess_min_pass1 = models.IntegerField(default=0)
+    sess_min_pass3 = models.IntegerField(default=0)
+    sess_total = models.IntegerField(default=0)
+    pr_min_pass1 = models.IntegerField(default=0)
+    pr_min_pass1 = models.IntegerField(default=0)
+    pr_total = models.IntegerField(default=0)
+    tw_min_pass1 = models.IntegerField(default=0)
+    tw_min_pass1 = models.IntegerField(default=0)
+    tw_total = models.IntegerField(default=0)
+    total_min_pass = models.IntegerField(default=0)
+    total_marks = models.IntegerField(default=0)
+    syllabus = models.CharField(max_length=50)
 
 
-class semester(models.Model):
-    subject = models.ManyToManyField(subject)
-    cpi = models.BigIntegerField(default=0.0)
-    spi = models.BigIntegerField(default=0.0)
-    overall_grade = models.CharField(max_length=10, default="")
+class Exam(models.Model):
+    exam_id = models.CharField(max_length=30, primary_key='true')
+    batch_year = models.CharField(max_length=10)
+    attempt_type = models.CharField(max_length=10)
+    session_no = models.IntegerField(default=0)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
 
 class Student(models.Model):
@@ -71,4 +103,41 @@ class Student(models.Model):
     local_address3 = models.CharField(max_length=30, blank=True, null=True)
     local_city = models.CharField(max_length=30, blank=True, null=True)
     local_mobile_no = models.CharField(max_length=30, blank=True, null=True)
-    semester = models.ManyToManyField(semester)
+    courses = models.ManyToManyField(Course)
+
+
+class InternalResult(models.Model):
+    result_id = models.CharField(max_length=30, primary_key='true')
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    sess1_att = models.IntegerField(default=0)
+    sess1_marks = models.IntegerField(default=0)
+    lecture_Att1 = models.IntegerField(default=0)
+    lecture_Att1_out_of = models.IntegerField(default=0)
+    pr_Att1 = models.IntegerField(default=0)
+    pr_Att1_out_of = models.IntegerField(default=0)
+    sess2_att = models.IntegerField(default=0)
+    sess2_marks = models.IntegerField(default=0)
+    lecture_Att2 = models.IntegerField(default=0)
+    lecture_Att2_out_of = models.IntegerField(default=0)
+    pr_Att2 = models.IntegerField(default=0)
+    pr_Att2_out_of = models.IntegerField(default=0)
+    sess3_att = models.IntegerField(default=0)
+    sess3_marks = models.IntegerField(default=0)
+    lecture_Att3_out_of = models.IntegerField(default=0)
+    lecture_Att3 = models.IntegerField(default=0)
+    pr_Att3 = models.IntegerField(default=0)
+    pr_Att3_out_of = models.IntegerField(default=0)
+    block_att = models.IntegerField(default=0)
+    block_marks = models.IntegerField(default=0)
+
+
+class RegularResult(models.Model):
+    result_id = models.CharField(max_length=30, primary_key='true')
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
+    extarnal_marks = models.IntegerField(default=0)
+    sessional_marks = models.IntegerField(default=0)
+    practical_marks = models.IntegerField(default=0)
+    termwork_marks = models.IntegerField(default=0)
+    max_marks = models.IntegerField(default=0)
