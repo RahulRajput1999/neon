@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7526d79-3b5a-46c9-8e5a-f2750ce69b26" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d7526d79-3b5a-46c9-8e5a-f2750ce69b26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +36,6 @@
               <item name="neon" type="b2602c69:ProjectViewProjectNode" />
               <item name="neon" type="462c0819:PsiDirectoryNode" />
               <item name="neon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -122,7 +108,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />

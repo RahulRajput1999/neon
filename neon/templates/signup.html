@@ -8,18 +8,13 @@
     <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
     <script src={% static "js/materialize.js" %}></script>
     <title>Document</title>
-    <style>
-        body {
-            background: linear-gradient(90deg, rgba(8, 3, 103, 1) 0%, rgba(16, 106, 143, 0.7791491596638656) 46%, rgba(0, 212, 255, 1) 100%);
-        }
-    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row" style="margin-top: 50PX;">
-            <div class="col l6 s12 m10 offset-m1 offset-l3">
-                <form action="/login/auth/" method="POST">
+        <div class="row">
+            <div class="col l6 offset-l3">
+                <form action="/login/auth" method="POST">
                     {% csrf_token %}
                     <div class="card">
                         <!-- <div class="card-image">
@@ -27,7 +22,7 @@
                         <span class="card-title">Card Title</span>
                     </div> -->
                         <div class="card-content">
-                            <span class="card-title">Login</span>
+                            <span class="card-title">Sign Up</span>
                             <div class="input-field">
                                 <input id="username" name="username" type="text" class="validate">
                                 <label for="username">Username</label>
@@ -36,16 +31,20 @@
                                 <input id="password" name="password" type="password" class="validate">
                                 <label for="password">Password</label>
                             </div>
+                            <div class="input-field">
+                                <input id="re_password" name="re_password" type="password" class="validate">
+                                <label for="re_password">Confirm password</label>
+                            </div>
                         </div>
                         {% if error %}
-                        <div class="card-panel red lighten-2">{{ error }}</div>
+                        <div class="card-panel teal lighten-2">{{ error }}</div>
                         {% endif %}
                         <div class="card-action">
-                            <button type="submit" class="waves-effect waves-light btn">Login</button>
-                            <!-- <div class="flex-col-c p-t-170 p-b-40">
-                                <span class="txt1 p-b-9"></br> Don’t have an account? </span> <a href="/login/signup/"
-                                    class="txt3"> Sign up now </a>
-                            </div> -->
+                            <a class="waves-effect waves-light btn">Login</a>
+                            <div class="flex-col-c p-t-170 p-b-40">
+                                <span class="txt1 p-b-9"></br> Already have an account? </span> <a href="/login"
+                                    class="txt3"> Login </a>
+                            </div>
                         </div>
                     </div>
                 </form>
