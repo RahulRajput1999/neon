@@ -73,103 +73,36 @@
                         <span class="card-title grey lighten-2" style="padding: 14px;">Exam Information</span>
                         <div class="row">
                             <div class="input-field col l6 m6 s12">
-                                <input id="subject_code" name="subject_code" type="text" class="validate">
-                                <label for="subject_code">Subject Code</label>
+                                <input id="exam_id" name="exam_id" type="text" class="validate">
+                                <label for="exam_id">Exam ID</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="name" name="name" type="text" class="validate">
-                                <label for="name">Name</label>
+                                <input id="batch_year" name="batch_year" type="number" class="validate">
+                                <label for="batch_year">Batch Year</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="alias" name="alias" type="text" class="validate">
-                                <label for="alias">Alias</label>
+                                <select id="attempt_type" name="attempt_type" type="text" class="validate">
+                                    <option value="" disabled selected>Choose Type</option>
+                                    <option value="internal">Internal</option>
+                                    <option value="regular">Regular</option>
+                                    <option value="remedial">Remedial</option>
+                                </select>
+                                <label for="attempt_type">Alias</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <select name="program">
-                                    <option value="" disabled selected>Choose program</option>
-                                    {% for program in programs %}
-                                    <option value="{{ program.program_code }}">{{ program.name }}</option>
+                                <select id="course" name="course">
+                                    <option value="" disabled selected>Choose course</option>
+                                    {% for course in courses %}
+                                    <option value="{{ course.subject_code }}">{{ course.name }}</option>
                                     {% empty %}
-                                    <option value="" disabled selected>No program available</option>
+                                    <option value="" disabled selected>No course available</option>
                                     {% endfor %}
                                 </select>
-                                <label>Materialize Select</label>
+                                <label for="course">Course</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="rec_status" name="rec_status" type="text" class="validate">
-                                <label for="rec_status">Rec. Status</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="session" name="session" type="number" class="validate">
-                                <label for="session">Session</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="elective" name="elective" type="text" class="validate">
-                                <label for="elective">Elective</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="credit" name="credit" type="number" class="validate">
-                                <label for="credit">Credit</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="th_min_pass1" name="th_min_pass1" type="number" class="validate">
-                                <label for="th_min_pass1">Th Min Pass1</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="th_min_pass2" name="th_min_pass2" type="number" class="validate">
-                                <label for="th_min_pass2">Th Min Pass2</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="th_total" name="th_total" type="number" class="validate">
-                                <label for="th_total">Th Total</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="sess_min_pass1" name="sess_min_pass1" type="number" class="validate">
-                                <label for="sess_min_pass1">Sess Min Pass1</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="sess_min_pass2" name="sess_min_pass2" type="number" class="validate">
-                                <label for="sess_min_pass2">Sess Min Pass2</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="sess_total" name="sess_total" type="number" class="validate">
-                                <label for="sess_total">Sess Total</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="pr_min_pass1" name="pr_min_pass1" type="number" class="validate">
-                                <label for="pr_min_pass1">Pr Min Pass1</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="pr_min_pass2" name="pr_min_pass2" type="number" class="validate">
-                                <label for="pr_min_pass2">Pr Min Pass2</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="pr_total" name="pr_total" type="number" class="validate">
-                                <label for="pr_total">Pr Total</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="tw_min_pass1" name="tw_min_pass1" type="number" class="validate">
-                                <label for="tw_min_pass1">Tw Min Pass1</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="tw_min_pass2" name="tw_min_pass2" type="number" class="validate">
-                                <label for="tw_min_pass2">Tw Min Pass2</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="tw_total" name="tw_total" type="number" class="validate">
-                                <label for="tw_total">Tw Total</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="total_min_pass" name="total_min_pass" type="number" class="validate">
-                                <label for="total_min_pass">Total Min Pass</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="total_marks" name="total_marks" type="number" class="validate">
-                                <label for="total_marks">Total Marks</label>
-                            </div>
-                            <div class="input-field col l6 m6 s12">
-                                <input id="syllabus" name="syllabus" type="text" class="validate">
-                                <label for="syllabus">Syllabus</label>
+                                <input id="session_no" name="session_no" type="number" class="validate">
+                                <label for="session_no">Session No</label>
                             </div>
                         </div>
                     </div>

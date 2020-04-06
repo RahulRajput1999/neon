@@ -206,9 +206,33 @@ def exams(request):
 
 @login_required(login_url='/login/')
 def addExam(request):
-    return
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        courses = Course.objects.all()
+        c['courses'] = courses
+        c['first_name'] = request.session['first_name']
+        c['last_name'] = request.session['last_name']
+        c['email'] = request.session['email']
+        return render(request, 'add_exam.html', c)
+    else:
+        return HttpResponseRedirect('/login/invalidlogin')
 
 
 @login_required(login_url='/login/')
 def insertExam(request):
-    return
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        exam_id = request.POST.get('exam_id', '')
+        batch_year = request.POST.get('batch_year', 0)
+        attempt_type = request.POST.get('attempt_type', '')
+        session_no = request.POST.get('session_no', '')
+        courseID = request.POST.get('course', '')
+        courseObj = Course.objects.filter(subject_code=courseID)[0]
+        exam = Exam(exam_id=exam_id, batch_year=batch_year,
+                    attempt_type=attempt_type, session_no=session_no, course=courseObj)
+        exam.save()
+        return HttpResponseRedirect('/staff/exams')
+    else:
+        return HttpResponseRedirect('/login/invalidlogin')
