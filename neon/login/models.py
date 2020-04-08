@@ -50,6 +50,7 @@ class Exam(models.Model):
     attempt_type = models.CharField(max_length=10)
     session_no = models.IntegerField(default=0)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    date = models.DateTimeField()
 
 
 class Student(models.Model):

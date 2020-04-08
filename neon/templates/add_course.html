@@ -85,7 +85,7 @@
                                 <label for="alias">Alias</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <select name="program">
+                                <select id="program" name="program">
                                     <option value="" disabled selected>Choose program</option>
                                     {% for program in programs %}
                                     <option value="{{ program.program_code }}">{{ program.name }}</option>
@@ -93,7 +93,7 @@
                                     <option value="" disabled selected>No program available</option>
                                     {% endfor %}
                                 </select>
-                                <label>Materialize Select</label>
+                                <label for="program">Program</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <input id="rec_status" name="rec_status" type="text" class="validate">
@@ -104,8 +104,13 @@
                                 <label for="session">Session</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="elective" name="elective" type="text" class="validate">
+                                <select id="elective" name="elective">
+                                    <option value="" disabled selected>Choose</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
                                 <label for="elective">Elective</label>
+
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <input id="credit" name="credit" type="number" class="validate">

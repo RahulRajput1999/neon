@@ -10,6 +10,6 @@ urlpatterns = [
     path('insertProgram/', views.insertProgram),
     path('addCourse/', views.addCourse),
     path('insertCourse/', views.insertCourse),
-    path('insertExam', views.insertExam),
-    path('addExam', views.addExam),
+    path('insertExam/', views.insertExam),
+    path('addExam/', views.addExam),
 ]
