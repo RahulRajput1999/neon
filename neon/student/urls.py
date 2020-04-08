@@ -7,4 +7,7 @@ urlpatterns = [
     path('saveDetails/', views.save_details),
     path('examResults/', views.exam_results),
     path('courseDetails/', views.course_details),
+    path('semcourses/',views.sem_courses),
+    path('internalresult/',views.internal_result),
+    path('externalresult/',views.external_result)
 ]
