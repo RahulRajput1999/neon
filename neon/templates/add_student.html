@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, { format: "yyyy-mm-dd" });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/staff" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student" style="font-size:20px">Link1</a></li>
+                    <li><a href="/student" style="font-size:20px">Link2</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{email}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="/student"><span class="white-text name">{{ first_name }}</span></a>
+                <a href="/student"><span class="white-text email">{{email}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student">Link1</a></li>
+        <li><a href="/student">Link2</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col l10 m12 s12 offset-l1">
+                <form action="/staff/uploadStudentFile/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">Student Information</span>
+                            <div class="row">
+                                <div class="col l12 m12 s12">
+                                    <label>Upload the Excel or CSV file below to add student data. You can find the
+                                        format of columns <a href="/staff/downloadSample">here</a>.</label>
+                                </div>
+                                <div class="file-field input-field col s12 m12 l12">
+                                    <div class="btn">
+                                        <span>Browse</span>
+                                        <input type="file" name="student_file" multiple />
+                                    </div>
+
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text"
+                                            placeholder="Upload Excel/CSV file" />
+                                    </div>
+                                </div>
+                            </div>
+                            {% if error %}
+                            <div class="card-panel red lighten-2">{{ error }}</div>
+                            {% endif %}
+                            <div class="card-action">
+                                <button type="submit" class="waves-effect waves-light btn"><i
+                                        class="material-icons right">save</i>Submit</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

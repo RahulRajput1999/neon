@@ -12,4 +12,8 @@ urlpatterns = [
     path('insertCourse/', views.insertCourse),
     path('insertExam/', views.insertExam),
     path('addExam/', views.addExam),
+    path('students/', views.students),
+    path('addStudent/', views.addStudent),
+    path('uploadStudentFile/', views.uploadStudentFile),
+    path('downloadSample/', views.downloadSample),
 ]
