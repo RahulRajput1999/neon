@@ -11,6 +11,8 @@ from djongo.models import Count
 import io
 import pandas as pd
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 
 @login_required(login_url='/login/')
@@ -294,6 +296,7 @@ def uploadStudentFile(request):
             return render(request, 'add_student.html', c)
         receivedColumns = list(df.columns.values)
         actualColumns = ['student_id',
+                         'password',
                          'admission_type',
                          'ddu_reporting_date',
                          'first_name',
@@ -341,13 +344,98 @@ def uploadStudentFile(request):
                          'local_address2',
                          'local_address3',
                          'local_city',
-                         'local_mobile_no',
-                         'courses']
+                         'local_mobile_no']
         receivedColumns.sort()
         actualColumns.sort()
         if receivedColumns == actualColumns:
+            students = []
+            users = []
+            programs = Program.objects.all()
+            for index, row in df.iterrows():
+                user = {}
+                user['username'] = str(row['student_id'])
+                user['first_name'] = str(row['first_name'])
+                user['last_name'] = str(row['last_name'])
+                user['password1'] = str(row['password'])
+                user['password2'] = str(row['password'])
+                user['email'] = str(row['email'])
+                print(user)
+                form = UserCreationForm(user)
+                form.save()
+                # users.append(
+                #     User(
+                #         username=str(row['student_id']),
+                #         first_name=str(row['first_name']),
+                #         last_name=str(row['last_name']),
+                #         email=str(row['email']),
+                #         password=str(row['password'])
+                #     )
+                # )
+                program = list(
+                    filter(lambda x: x.program_code == row['degree'], programs))
+                print(type(row['birth_date']))
+                students.append(
+                    Student(
+                        student_id=str(row['student_id']),
+                        admission_type=str(row['admission_type']),
+                        ddu_reporting_date=str(row['ddu_reporting_date']),
+                        first_name=str(row['first_name']),
+                        middle_name=str(row['middle_name']),
+                        last_name=str(row['last_name']),
+                        name_format=str(row['name_format']),
+                        gender=str(row['gender']),
+                        birth_date=str(row['birth_date']),
+                        birth_place=str(row['birth_place']),
+                        acpc_seat_allotment_date=str(
+                            row['acpc_seat_allotment_date']),
+                        is_d2d=row['is_d2d'],
+                        enrollment_year=str(row['enrollment_year']),
+                        degree=program[0],
+                        qualifying_exam_rollno=str(
+                            row['qualifying_exam_rollno']),
+                        session_type=row['session_type'],
+                        session_no=row['session_no'],
+                        batch_year=str(row['batch_year']),
+                        old_student_code=row['old_student_code'],
+                        students_allotment=row['students_allotment'],
+                        merit_rank=str(row['merit_rank']),
+                        re_shuffle_status=row['re_shuffle_status'],
+                        re_shuffle_phase=str(row['re_shuffle_phase']),
+                        cast_category_code=str(row['cast_category_code']),
+                        sub_cast=row['sub_cast'],
+                        marital_status=row['marital_status'],
+                        mother_tongue=row['mother_tongue'],
+                        nationality=row['nationality'],
+                        blood_group=row['blood_group'],
+                        relation_type=row['relation_type'],
+                        full_name=row['full_name'],
+                        occupation=row['occupation'],
+                        organization_name=row['organization_name'],
+                        annual_income=row['annual_income'],
+                        address1=row['address1'],
+                        address2=row['address2'],
+                        address3=['address3'],
+                        city=row['city'],
+                        pin_code=str(row['pin_code']),
+                        state=row['state'],
+                        country=row['country'],
+                        phone_no=str(row['phone_no']),
+                        mobile_no=str(row['mobile_no']),
+                        email=row['email'],
+                        local_address1=row['local_address1'],
+                        local_address2=row['local_address2'],
+                        local_address3=row['local_address3'],
+                        local_city=row['local_city'],
+                        local_mobile_no=str(row['local_mobile_no']),
+                    )
+                )
+            # User.objects.bulk_create(users)
+            # students[0].save()
+            Student.objects.bulk_create(students)
             return HttpResponseRedirect('/staff/students')
         else:
+            print(actualColumns)
+            print(receivedColumns)
             c['error'] = "Some fields are missing or not matching in the file!"
             return render(request, 'add_student.html', c)
 
@@ -360,14 +448,9 @@ def downloadSample(request):
     file_path = '/home/rahul/projects/django/neon/neon/static/assets/files/students.csv'
     file_name = 'students.csv'
     excel = open(file_path, 'r')
-    # mime_type = 'application/vnd.ms-excel'
-    # response = HttpResponse(fl, content_type=mime_type)
-    # response['Content-Disposition'] = "attachment; filename=%s" % file_name
-    # response['']
     output = io.StringIO(excel.read())
     out_content = output.getvalue()
     output.close()
     response = HttpResponse(out_content, content_type='text/csv')
     response['Content-Disposition'] = "attachment; filename=%s" % file_name
-    # return response
     return response

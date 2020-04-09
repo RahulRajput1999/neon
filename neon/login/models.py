@@ -104,7 +104,6 @@ class Student(models.Model):
     local_address3 = models.CharField(max_length=30, blank=True, null=True)
     local_city = models.CharField(max_length=30, blank=True, null=True)
     local_mobile_no = models.CharField(max_length=30, blank=True, null=True)
-    courses = models.ManyToManyField(Course)
 
 
 class InternalResult(models.Model):
