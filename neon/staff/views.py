@@ -7,6 +7,10 @@ from django.contrib.auth import *
 from django.contrib.auth.models import User
 from login.models import Student, Program, Course, Exam
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from djongo.models import Count
+import io
+import pandas as pd
+from django.contrib.staticfiles.templatetags.staticfiles import static
 
 
 @login_required(login_url='/login/')
@@ -229,10 +233,141 @@ def insertExam(request):
         attempt_type = request.POST.get('attempt_type', '')
         session_no = request.POST.get('session_no', '')
         courseID = request.POST.get('course', '')
+        date = request.POST.get('date', '')
         courseObj = Course.objects.filter(subject_code=courseID)[0]
         exam = Exam(exam_id=exam_id, batch_year=batch_year,
-                    attempt_type=attempt_type, session_no=session_no, course=courseObj)
+                    attempt_type=attempt_type, session_no=session_no, course=courseObj, date=date)
         exam.save()
         return HttpResponseRedirect('/staff/exams')
     else:
         return HttpResponseRedirect('/login/invalidlogin')
+
+
+@login_required(login_url='/login/')
+def students(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        studentCount = Student.objects.values(
+            'degree').annotate(dcount=Count('degree'))
+        c['data'] = studentCount
+        c['first_name'] = request.session['first_name']
+        c['last_name'] = request.session['last_name']
+        c['email'] = request.session['email']
+        return render(request, 'students.html', c)
+    else:
+        return HttpResponseRedirect('/logoin/invalidlogin')
+
+
+@login_required(login_url='/login/')
+def addStudent(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        courses = Course.objects.all()
+        c['courses'] = courses
+        c['first_name'] = request.session['first_name']
+        c['last_name'] = request.session['last_name']
+        c['email'] = request.session['email']
+        return render(request, 'add_student.html', c)
+    else:
+        return HttpResponseRedirect('/login/invalidlogin')
+
+
+@login_required(login_url='/login/')
+def uploadStudentFile(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        c['first_name'] = request.session['first_name']
+        c['last_name'] = request.session['last_name']
+        c['email'] = request.session['email']
+        file = request.FILES['student_file']
+        if file.content_type == 'text/csv':
+            df = pd.read_csv(io.BytesIO(file.read()))
+            # print(df.head())
+        elif file.content_type == 'application/vnd.ms-excel':
+            df = pd.read_excel(io.BytesIO(file.read()))
+            # print(list(df.columns.values))
+        else:
+            c['error'] = "File type is not supported!"
+            return render(request, 'add_student.html', c)
+        receivedColumns = list(df.columns.values)
+        actualColumns = ['student_id',
+                         'admission_type',
+                         'ddu_reporting_date',
+                         'first_name',
+                         'middle_name',
+                         'last_name',
+                         'name_format',
+                         'gender',
+                         'birth_date',
+                         'birth_place',
+                         'acpc_seat_allotment_date',
+                         'is_d2d',
+                         'enrollment_year',
+                         'degree',
+                         'qualifying_exam_rollno',
+                         'session_type',
+                         'session_no',
+                         'batch_year',
+                         'old_student_code',
+                         'students_allotment',
+                         'merit_rank',
+                         're_shuffle_status',
+                         're_shuffle_phase',
+                         'cast_category_code',
+                         'sub_cast',
+                         'marital_status',
+                         'mother_tongue',
+                         'nationality',
+                         'blood_group',
+                         'relation_type',
+                         'full_name',
+                         'occupation',
+                         'organization_name',
+                         'annual_income',
+                         'address1',
+                         'address2',
+                         'address3',
+                         'city',
+                         'pin_code',
+                         'state',
+                         'country',
+                         'phone_no',
+                         'mobile_no',
+                         'email',
+                         'local_address1',
+                         'local_address2',
+                         'local_address3',
+                         'local_city',
+                         'local_mobile_no',
+                         'courses']
+        receivedColumns.sort()
+        actualColumns.sort()
+        if receivedColumns == actualColumns:
+            return HttpResponseRedirect('/staff/students')
+        else:
+            c['error'] = "Some fields are missing or not matching in the file!"
+            return render(request, 'add_student.html', c)
+
+    else:
+        return HttpResponseRedirect('/login/invalidlogin')
+
+
+@login_required(login_url='/login/')
+def downloadSample(request):
+    file_path = '/home/rahul/projects/django/neon/neon/static/assets/files/students.csv'
+    file_name = 'students.csv'
+    excel = open(file_path, 'r')
+    # mime_type = 'application/vnd.ms-excel'
+    # response = HttpResponse(fl, content_type=mime_type)
+    # response['Content-Disposition'] = "attachment; filename=%s" % file_name
+    # response['']
+    output = io.StringIO(excel.read())
+    out_content = output.getvalue()
+    output.close()
+    response = HttpResponse(out_content, content_type='text/csv')
+    response['Content-Disposition'] = "attachment; filename=%s" % file_name
+    # return response
+    return response

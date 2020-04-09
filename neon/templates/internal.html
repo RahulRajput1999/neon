@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student/examResults" style="font-size:20px">Exam Results</a></li>
+                    <li><a href="/student/courseDetails" style="font-size:20px">Course Details</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{student.student_id}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="#"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="#"><span class="white-text email">{{student.student_id}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student/examResults">Exam Results</a></li>
+        <li><a href="/student/courseDetails">Course Details</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div class="container" style="padding-top:30px">
+        <div class="row">
+            <div class="col m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Internals Marks
+                        </span>
+                        <table class="table-responsive">
+                            <thead>
+                                <tr>
+                                  <th>Subject code</th>
+                                  <th>Name</th>
+                                  <th>Alias</th>
+                                    <th>Credits</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>C101</td>
+                                    <td>Course 1</td>
+                                    <td>C1</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>C102</td>
+                                    <td>Course 2</td>
+                                    <td>C2</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>C103</td>
+                                    <td>Course 3</td>
+                                    <td>C3</td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
