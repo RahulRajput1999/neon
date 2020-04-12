@@ -9,42 +9,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/neon/templates/sem_courses.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/neon/login/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-596">
-              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
-            </state>
+            <state relative-caret-position="-154" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
+        <entry file="file://$PROJECT_DIR$/neon/student/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state>
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +57,7 @@
     <option name="height" value="688" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -98,58 +77,13 @@
               <item name="neon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="neon" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="login" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="neon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="neon" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="student" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-            <path>
-              <item name="neon" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="neon" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="student" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="neon" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,7 +127,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -327,8 +261,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neon/student/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="101" column="51" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
+        <state>
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -354,9 +287,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
-        </state>
+        <state relative-caret-position="-154" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
