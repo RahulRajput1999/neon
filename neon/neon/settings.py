@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login.apps.LoginConfig',
+    'staff.apps.StaffConfig',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'neon.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates'),os.path.join(BASE_DIR,'static')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,29 +80,29 @@ WSGI_APPLICATION = 'neon.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-            'ENGINE': 'djongo',
-            'ENFORCE_SCHEMA': True,
-            'LOGGING': {
-                'version': 1,
-                'loggers': {
-                    'djongo': {
-                        'level': 'DEBUG',
-                        'propogate': False,                        
-                    }
-                },
-             },
-            'NAME': 'neon',
-            'CLIENT': {
-                #'host': 'mongodb://neon:neon1999@ds153413.mlab.com:53413/neon?retryWrites=false',
-                #'port': 63028,
-                #'username': 'neon',
-                #'password': 'neon1999',
+    'default': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': True,
+        'LOGGING': {
+            'version': 1,
+            'loggers': {
+                'djongo': {
+                    'level': 'DEBUG',
+                    'propogate': False,
+                }
+            },
+        },
+        'NAME': 'neon',
+        'CLIENT': {
+                # 'host': 'mongodb://neon:neon1999@ds153413.mlab.com:53413/neon?retryWrites=false',
+                # 'port': 63028,
+                # 'username': 'neon',
+                # 'password': 'neon1999',
                 'host': 'localhost',
                 'port': 27017,
-            }
         }
     }
+}
 
 
 # Password validation

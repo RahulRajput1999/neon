@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/staff" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student" style="font-size:20px">Link1</a></li>
+                    <li><a href="/student" style="font-size:20px">Link2</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{email}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="/student"><span class="white-text name">{{ first_name }}</span></a>
+                <a href="/student"><span class="white-text email">{{email}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student">Link1</a></li>
+        <li><a href="/student">Link2</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px; font-size: 22px;">
+                            Exams Information
+                            <a class="waves-effect waves-light btn right" href="/staff/addExam"><i
+                                    class="material-icons">add</i></a>
+                        </span>
+                        <div class="collection">
+                            {% for exam in exams %}
+                            <a href="/staff/examDetails/?examID={{exam.exam_id}}" class="collection-item">{{ exam.course.name }} {{ exam.attempt_type }}
+                                {{ exam.session_no }}-SEM {{ exam.batch_year }}</a>
+                            {% empty %}
+                            <span>No Exams</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col l12 m12 s12">
+                        {% if exams.has_other_pages %}
+                        <ul class="pagination">
+                            {% if exams.has_previous %}
+                            <li><a href="?page={{ exams.previous_page_number }}"><i
+                                        class="material-icons">chevron_left</i></a>
+                            </li>
+                            {% else %}
+                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                            {% endif %}
+                            {% for i in exams.paginator.page_range %}
+                            {% if exams.number == i %}
+                            <li class="active"><a href="#!">{{ i }}</a></li>
+                            {% else %}
+                            <li class="waves-effect"><a href="?page={{ i }}">{{ i }}</a></li>
+                            {% endif %}
+                            {% endfor %}
+                            {% if exams.has_next %}
+                            <li class="waves-effect"><a href="?page={{ exams.next_page_number }}"><i
+                                        class="material-icons">chevron_right</i></a></li>
+                            {% else %}
+                            <li class="disabled waves-effect"><a href="#!"><i
+                                        class="material-icons">chevron_right</i></a></li>
+                            {% endif %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

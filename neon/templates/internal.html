@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/student" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student/examResults" style="font-size:20px">Exam Results</a></li>
+                    <li><a href="/student/courseDetails" style="font-size:20px">Course Details</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{student.student_id}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="#"><span class="white-text name">{{ student.first_name }}</span></a>
+                <a href="#"><span class="white-text email">{{student.student_id}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student/examResults">Exam Results</a></li>
+        <li><a href="/student/courseDetails">Course Details</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div>
+        <div class="row">
+            <div class="col l12 m12 s12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Internals Marks
+                        </span>
+                        <table class="table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>Sess1 Att</th>
+                                    <th>Sess1 Marks</th>
+                                    <th>Lecture Att 1</th>
+                                    <th>Lecture Att 1 Out Of</th>
+                                    <th>Pr Att 1</th>
+                                    <th>Pr Att 1 Out Of</th>
+                                    <th>Sess2 Att</th>
+                                    <th>Sess2 Marks</th>
+                                    <th>Lecture Att 2</th>
+                                    <th>Lecture Att 2 Out Of</th>
+                                    <th>Pr Att 2</th>
+                                    <th>Pr Att 2 Out Of</th>
+                                    <th>Sess3 Att</th>
+                                    <th>Sess3 Marks</th>
+                                    <th>Lecture Att 3</th>
+                                    <th>Lecture Att 3 Out Of</th>
+                                    <th>Pr Att 3</th>
+                                    <th>Pr Att 3 Out Of</th>
+                                    <th>Block Att</th>
+                                    <th>Block Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                <tr>
+                                    <td>{{result.exam.course.alias}}</td>
+                                    <td>{{result.exam.course.name}}</td>
+                                    <td>{{result.sess1_att}}</td>
+                                    <td>{{result.sess1_marks}}</td>
+                                    <td>{{result.lecture_Att1}}</td>
+                                    <td>{{result.lecture_Att1_out_of}}</td>
+                                    <td>{{result.pr_Att1}}</td>
+                                    <td>{{result.pr_Att1_out_of}}</td>
+                                    <td>{{result.sess2_att}}</td>
+                                    <td>{{result.sess2_marks}}</td>
+                                    <td>{{result.lecture_Att2}}</td>
+                                    <td>{{result.lecture_Att2_out_of}}</td>
+                                    <td>{{result.pr_Att2}}</td>
+                                    <td>{{result.pr_Att2_out_of}}</td>
+                                    <td>{{result.sess3_att}}</td>
+                                    <td>{{result.sess3_marks}}</td>
+                                    <td>{{result.lecture_Att3_out_of}}</td>
+                                    <td>{{result.lecture_Att3}}</td>
+                                    <td>{{result.pr_Att3}}</td>
+                                    <td>{{result.pr_Att3_out_of}}</td>
+                                    <td>{{result.block_att}}</td>
+                                    <td>{{result.block_marks}}</td>
+
+                                    
+                                </tr>
+                                {% empty %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

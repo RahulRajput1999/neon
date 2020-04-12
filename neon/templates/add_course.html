@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/staff" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student" style="font-size:20px">Link1</a></li>
+                    <li><a href="/student" style="font-size:20px">Link2</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{email}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="/student"><span class="white-text name">{{ first_name }}</span></a>
+                <a href="/student"><span class="white-text email">{{email}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student">Link1</a></li>
+        <li><a href="/student">Link2</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+</body>
+<div class="container">
+    <div class="row">
+        <div class="col l10 m12 s12 offset-l1">
+            <form action="/staff/insertCourse/" method="POST">
+                {% csrf_token %}
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">Course Information</span>
+                        <div class="row">
+                            <div class="input-field col l6 m6 s12">
+                                <input id="subject_code" name="subject_code" type="text" class="validate">
+                                <label for="subject_code">Subject Code</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="name" name="name" type="text" class="validate">
+                                <label for="name">Name</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="alias" name="alias" type="text" class="validate">
+                                <label for="alias">Alias</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <select id="program" name="program">
+                                    <option value="" disabled selected>Choose program</option>
+                                    {% for program in programs %}
+                                    <option value="{{ program.program_code }}">{{ program.name }}</option>
+                                    {% empty %}
+                                    <option value="" disabled selected>No program available</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="program">Program</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="rec_status" name="rec_status" type="text" class="validate">
+                                <label for="rec_status">Rec. Status</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="session" name="session" type="number" class="validate">
+                                <label for="session">Session</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <select id="elective" name="elective">
+                                    <option value="" disabled selected>Choose</option>
+                                    <option value="YES">YES</option>
+                                    <option value="NO">NO</option>
+                                </select>
+                                <label for="elective">Elective</label>
+
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="credit" name="credit" type="number" class="validate">
+                                <label for="credit">Credit</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="th_min_pass1" name="th_min_pass1" type="number" class="validate">
+                                <label for="th_min_pass1">Th Min Pass1</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="th_min_pass2" name="th_min_pass2" type="number" class="validate">
+                                <label for="th_min_pass2">Th Min Pass2</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="th_total" name="th_total" type="number" class="validate">
+                                <label for="th_total">Th Total</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="sess_min_pass1" name="sess_min_pass1" type="number" class="validate">
+                                <label for="sess_min_pass1">Sess Min Pass1</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="sess_min_pass2" name="sess_min_pass2" type="number" class="validate">
+                                <label for="sess_min_pass2">Sess Min Pass2</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="sess_total" name="sess_total" type="number" class="validate">
+                                <label for="sess_total">Sess Total</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="pr_min_pass1" name="pr_min_pass1" type="number" class="validate">
+                                <label for="pr_min_pass1">Pr Min Pass1</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="pr_min_pass2" name="pr_min_pass2" type="number" class="validate">
+                                <label for="pr_min_pass2">Pr Min Pass2</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="pr_total" name="pr_total" type="number" class="validate">
+                                <label for="pr_total">Pr Total</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="tw_min_pass1" name="tw_min_pass1" type="number" class="validate">
+                                <label for="tw_min_pass1">Tw Min Pass1</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="tw_min_pass2" name="tw_min_pass2" type="number" class="validate">
+                                <label for="tw_min_pass2">Tw Min Pass2</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="tw_total" name="tw_total" type="number" class="validate">
+                                <label for="tw_total">Tw Total</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="total_min_pass" name="total_min_pass" type="number" class="validate">
+                                <label for="total_min_pass">Total Min Pass</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="total_marks" name="total_marks" type="number" class="validate">
+                                <label for="total_marks">Total Marks</label>
+                            </div>
+                            <div class="input-field col l6 m6 s12">
+                                <input id="syllabus" name="syllabus" type="text" class="validate">
+                                <label for="syllabus">Syllabus</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <button type="submit" class="waves-effect waves-light btn"><i
+                                class="material-icons right">save</i>Submit</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</html>

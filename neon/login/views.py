@@ -6,14 +6,19 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import *
 from django.contrib.auth.forms import PasswordChangeForm
-from login.forms import *
-from login.models import *
+# from login.forms import *
+from .forms import *
+# from login.models import *
+from .models import *
 # Create your views here.
 
 
 def index(request):  # view to show the login page
     if request.user.is_authenticated:
-        return HttpResponseRedirect('/student')
+        if request.user.is_staff:
+            return HttpResponseRedirect('/staff/')
+        else:
+            return HttpResponseRedirect('/student')
     else:
         c = {}
         c.update(csrf(request))
@@ -26,13 +31,13 @@ def auth_view(request):  # view to aquthenticate the user...
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     user = auth.authenticate(username=username, password=password)
-    student = Student.objects.filter(student_id=username)
-    count = student.count()
-    if user is not None:
+    if user is not None and user.is_staff:
         auth.login(request, user)
-        if int(count) > 0:
-            return HttpResponseRedirect('/student/')
-        return HttpResponseRedirect('/login/loggedin/')
+        return HttpResponseRedirect('/staff/')
+    elif user is not None and not user.is_staff:
+        student = Student.objects.filter(student_id=username)
+        auth.login(request, user)
+        return HttpResponseRedirect('/student/')
     else:
         return HttpResponseRedirect('/login/invalidlogin/')
 

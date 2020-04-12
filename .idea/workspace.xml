@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7526d79-3b5a-46c9-8e5a-f2750ce69b26" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/neon/login/migrations/0001_initial.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/neon/static/assets/images/yuna.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/neon/templates/home.html" afterDir="false" />
@@ -13,6 +14,18 @@
       <change beforePath="$PROJECT_DIR$/neon/neon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/neon/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neon/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/student/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/neon/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/index.html" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/neon/templates/external.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neon/templates/internal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/neon/templates/sem_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/student/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/student/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/templates/course_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/course_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/templates/exam_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/exam_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/templates/student_edit_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/student_edit_details.html" afterDir="false" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +35,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/neon/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -35,15 +49,30 @@
                 <element signature="n#style#0;n#tr#36;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#tr#40;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neon/templates/sem_courses.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neon/login/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="37" column="13" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="13" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/neon/login/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1173">
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -51,6 +80,27 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -59,11 +109,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/neon/login/models.py" />
         <option value="$PROJECT_DIR$/neon/templates/home.html" />
         <option value="$PROJECT_DIR$/neon/neon/settings.py" />
         <option value="$PROJECT_DIR$/neon/neon/urls.py" />
         <option value="$PROJECT_DIR$/neon/login/views.py" />
+=======
+        <option value="$PROJECT_DIR$/neon/templates/staff_home.html" />
+        <option value="$PROJECT_DIR$/neon/templates/home.html" />
+        <option value="$PROJECT_DIR$/neon/templates/student_edit_details.html" />
+        <option value="$PROJECT_DIR$/neon/login/models.py" />
+        <option value="$PROJECT_DIR$/neon/templates/course_details.html" />
+        <option value="$PROJECT_DIR$/neon/templates/exam_results.html" />
+        <option value="$PROJECT_DIR$/neon/student/urls.py" />
+        <option value="$PROJECT_DIR$/neon/templates/sem_courses.html" />
+        <option value="$PROJECT_DIR$/neon/templates/internal.html" />
+        <option value="$PROJECT_DIR$/neon/templates/external.html" />
+        <option value="$PROJECT_DIR$/neon/student/views.py" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
       </list>
     </option>
   </component>
@@ -78,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,6 +165,8 @@
           <select />
         </subPane>
       </pane>
+=======
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -134,6 +201,43 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neon" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="neon" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,11 +268,27 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
+=======
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -177,8 +297,13 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+=======
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
@@ -197,6 +322,7 @@
     <entry file="file://$PROJECT_DIR$/neon/student/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/neon/schedule/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -211,10 +337,36 @@
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/neon/neon/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/schedule/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/neon/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/login/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/neon/login/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -254,20 +406,80 @@
           <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/neon/student/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/add_program.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="79" column="49" lean-forward="true" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/programs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/exams.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/student_edit_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="246" column="73" selection-start-line="246" selection-start-column="73" selection-end-line="246" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/staff_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="107" column="55" selection-start-line="107" selection-start-column="32" selection-end-line="107" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/exam_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="74" column="107" selection-start-line="74" selection-start-column="107" selection-end-line="74" selection-end-column="107" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/neon/student/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/neon/student/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/neon/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2">
@@ -284,10 +496,40 @@
           <caret line="37" column="13" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="13" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/neon/templates/course_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="68" column="66" lean-forward="true" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="156" selection-start-line="62" selection-end-line="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/student/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="101" column="51" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/neon/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -299,6 +541,28 @@
             <element signature="n#style#0;n#tr#30;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#36;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#tr#40;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/neon/templates/sem_courses.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="86" column="31" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/login/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+>>>>>>> 46abd355640e81f9d8c28fccf8b35b7fb468e1a2
           </folding>
         </state>
       </provider>

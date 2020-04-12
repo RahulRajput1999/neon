@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/materialize.css" %} type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src={% static "js/materialize.js" %}></script>
+    <title>Home</title>
+    <style>
+        body {
+            background: #ededed;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+            var elems = document.querySelectorAll('.datepicker');
+            var instances = M.Datepicker.init(elems, { format: "yyyy-mm-dd" });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue z-depth-3">
+                <a href="/staff" class="brand-logo" style="padding-left: 15px">Neon</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down" style="padding-left:100px">
+                    <li><a href="/student" style="font-size:20px">Link1</a></li>
+                    <li><a href="/student" style="font-size:20px">Link2</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <div class="chip">
+                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            {{email}}
+                        </div>
+                    </li>
+                    <li><a href="/login/logout">Log out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src={% static "assets/images/office.jpg" %}>
+                </div>
+                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <a href="/student"><span class="white-text name">{{ first_name }}</span></a>
+                <a href="/student"><span class="white-text email">{{email}}</span></a>
+            </div>
+        </li>
+        <li><a href="/student">Link1</a></li>
+        <li><a href="/student">Link2</a></li>
+        <li><a href="/login/logout">Log out</a></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col l10 m12 s12 offset-l1">
+                <form action="/staff/insertExam/" method="POST">
+                    {% csrf_token %}
+                    <div class="card z-depth-3">
+                        <div class="card-content">
+                            <span class="card-title grey lighten-2" style="padding: 14px;">Exam Information</span>
+                            <div class="row">
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="exam_id" name="exam_id" type="text" class="validate">
+                                    <label for="exam_id">Exam ID</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="batch_year" name="batch_year" type="number" class="validate">
+                                    <label for="batch_year">Batch Year</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <select id="attempt_type" name="attempt_type" type="text" class="validate">
+                                        <option value="" disabled selected>Choose Type</option>
+                                        <option value="internal">Internal</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="remedial">Remedial</option>
+                                    </select>
+                                    <label for="attempt_type">Alias</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="date" name="date" type="text" class="datepicker">
+                                    <label for="date">Exam Date</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <select id="course" name="course">
+                                        <option value="" disabled selected>Choose course</option>
+                                        {% for course in courses %}
+                                        <option value="{{ course.subject_code }}">{{ course.name }}</option>
+                                        {% empty %}
+                                        <option value="" disabled selected>No course available</option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for="course">Course</label>
+                                </div>
+                                <div class="input-field col l6 m6 s12">
+                                    <input id="session_no" name="session_no" type="number" class="validate">
+                                    <label for="session_no">Session No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="waves-effect waves-light btn"><i
+                                    class="material-icons right">save</i>Submit</a></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
