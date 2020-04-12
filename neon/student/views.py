@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from django.contrib.auth import *
 from django.contrib.auth.models import User
-from login.models import Student
+from login.models import *
 # Create your views here.
 
 
@@ -38,70 +38,64 @@ def exam_results(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated:
-        student = request.session['student']
+        student = Student.objects.filter(student_id=request.user.username)
         if student is not None:
-            c['student'] = student
-        sem_list = [1, 2, 3, 4, 5, 6, 7, 8]
+            c['student'] = student[0]
+        sem_list = list(range(1, student[0].session_no+1))
         c['semesters'] = sem_list
         return render(request, 'exam_results.html', c)
     else:
         return HttpResponseRedirect('/login/invalidlogin')
 
 
+@login_required(login_url='/login/')
 def internal_result(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated:
+        sem = request.GET.get('sem', 1)
         student = request.session['student']
         if student is not None:
+            results = InternalResult.objects.filter(
+                student=student['student_id'], exam__session_no=int(sem))
+            c['results'] = results
             c['student'] = student
-            sem_list = [1,2,3,4,5,6,7,8]
-            c['semesters'] = sem_list
-        return render(request, 'internal.html',c)
+        return render(request, 'internal.html', c)
     else:
         return HttpResponseRedirect('/login/invalidlogin')
 
 
+@login_required(login_url='/login/')
 def external_result(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated:
+        sem = request.GET.get('sem', 1)
         student = request.session['student']
         if student is not None:
+            results = RegularResult.objects.filter(
+                student=student['student_id'], exam__session_no=int(sem))
             c['student'] = student
-            sem_list = [1,2,3,4,5,6,7,8]
-            c['semesters'] = sem_list
+            c['results'] = results
         return render(request, 'external.html', c)
     else:
         return HttpResponseRedirect('/login/invalidlogin')
+
 
 @login_required(login_url='/login/')
 def course_details(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated:
-        student = request.session['student']
+        student = Student.objects.filter(student_id=request.user.username)
         if student is not None:
+            courses = Course.objects.filter(program = student[0].degree)
+            c['courses'] = courses
             c['student'] = student
-            sem_list = [1,2,3,4,5,6,7,8]
-            c['semesters'] = sem_list
         return render(request, 'course_details.html', c)
     else:
         return HttpResponseRedirect('/login/invalidlogin')
 
-
-def sem_courses(request):
-    c = {}
-    c.update(csrf(request))
-    if request.user.is_authenticated:
-        student = request.session['student']
-        if student is not None:
-            c['student'] = student
-            sem_list = [1,2,3,4,5,6,7,8]
-            c['semesters'] = sem_list
-        return render(request, 'sem_courses.html',c)
-    else:
-        return HttpResponseRedirect('/login/invalidlogin')
 
 @login_required(login_url='/login/')
 def edit_details(request):

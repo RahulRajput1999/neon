@@ -60,9 +60,9 @@
         <li><a href="/student/courseDetails">Course Details</a></li>
         <li><a href="/login/logout">Log out</a></li>
     </ul>
-    <div class="container" style="padding-top:30px">
+    <div>
         <div class="row">
-            <div class="col m12 s12">
+            <div class="col l12 m12 s12">
                 <div class="card z-depth-3">
                     <div class="card-content">
                         <span class="card-title grey lighten-2" style="padding: 14px;">Internals Marks
@@ -70,33 +70,62 @@
                         <table class="table-responsive">
                             <thead>
                                 <tr>
-                                  <th>Subject code</th>
-                                  <th>Name</th>
-                                  <th>Alias</th>
-                                    <th>Credits</th>
-                              </tr>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
+                                    <th>Sess1 Att</th>
+                                    <th>Sess1 Marks</th>
+                                    <th>Lecture Att 1</th>
+                                    <th>Lecture Att 1 Out Of</th>
+                                    <th>Pr Att 1</th>
+                                    <th>Pr Att 1 Out Of</th>
+                                    <th>Sess2 Att</th>
+                                    <th>Sess2 Marks</th>
+                                    <th>Lecture Att 2</th>
+                                    <th>Lecture Att 2 Out Of</th>
+                                    <th>Pr Att 2</th>
+                                    <th>Pr Att 2 Out Of</th>
+                                    <th>Sess3 Att</th>
+                                    <th>Sess3 Marks</th>
+                                    <th>Lecture Att 3</th>
+                                    <th>Lecture Att 3 Out Of</th>
+                                    <th>Pr Att 3</th>
+                                    <th>Pr Att 3 Out Of</th>
+                                    <th>Block Att</th>
+                                    <th>Block Marks</th>
+                                </tr>
                             </thead>
                             <tbody>
+                                {% for result in results %}
                                 <tr>
-                                    <td>C101</td>
-                                    <td>Course 1</td>
-                                    <td>C1</td>
-                                    <td>5</td>
+                                    <td>{{result.exam.course.alias}}</td>
+                                    <td>{{result.exam.course.name}}</td>
+                                    <td>{{result.sess1_att}}</td>
+                                    <td>{{result.sess1_marks}}</td>
+                                    <td>{{result.lecture_Att1}}</td>
+                                    <td>{{result.lecture_Att1_out_of}}</td>
+                                    <td>{{result.pr_Att1}}</td>
+                                    <td>{{result.pr_Att1_out_of}}</td>
+                                    <td>{{result.sess2_att}}</td>
+                                    <td>{{result.sess2_marks}}</td>
+                                    <td>{{result.lecture_Att2}}</td>
+                                    <td>{{result.lecture_Att2_out_of}}</td>
+                                    <td>{{result.pr_Att2}}</td>
+                                    <td>{{result.pr_Att2_out_of}}</td>
+                                    <td>{{result.sess3_att}}</td>
+                                    <td>{{result.sess3_marks}}</td>
+                                    <td>{{result.lecture_Att3_out_of}}</td>
+                                    <td>{{result.lecture_Att3}}</td>
+                                    <td>{{result.pr_Att3}}</td>
+                                    <td>{{result.pr_Att3_out_of}}</td>
+                                    <td>{{result.block_att}}</td>
+                                    <td>{{result.block_marks}}</td>
+
+                                    
                                 </tr>
-                                <tr>
-                                    <td>C102</td>
-                                    <td>Course 2</td>
-                                    <td>C2</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>C103</td>
-                                    <td>Course 3</td>
-                                    <td>C3</td>
-                                    <td>5</td>
-                                </tr>
+                                {% empty %}
+                                {% endfor %}
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                 </div>
             </div>

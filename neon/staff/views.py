@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 from django.template.context_processors import csrf
 from django.contrib.auth import *
 from django.contrib.auth.models import User
-from login.models import Student, Program, Course, Exam
+from login.models import *
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from djongo.models import Count
 import io
@@ -13,6 +13,7 @@ import pandas as pd
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+import os
 
 
 @login_required(login_url='/login/')
@@ -226,6 +227,119 @@ def addExam(request):
 
 
 @login_required(login_url='/login/')
+def examDetails(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        exam_id = request.GET.get('examID', '')
+        exam = Exam.objects.filter(exam_id=exam_id)
+        c['exam'] = exam[0]
+        c['first_name'] = request.session['first_name']
+        c['last_name'] = request.session['last_name']
+        c['email'] = request.session['email']
+        return render(request, 'exam_details.html', c)
+    else:
+        return HttpResponseRedirect('/login/invalidlogin')
+
+
+@login_required(login_url='/login/')
+def uploadResult(request):
+    c = {}
+    c.update(csrf(request))
+    if request.user.is_authenticated:
+        resultType = request.GET.get('resultType')
+        exam_id = request.GET.get('examID')
+        file = request.FILES['result_file']
+        if resultType == 'internal':
+            if file.content_type == 'text/csv':
+                df = pd.read_csv(io.BytesIO(file.read()))
+            elif file.content_type == 'application/vnd.ms-excel':
+                df = pd.read_excel(io.BytesIO(file.read()))
+            else:
+                c['error'] = "File type is not supported!"
+                return render(request, 'exam_details.html', c)
+            receivedColumns = list(df.columns.values)
+            actualColumnsInternal = ['result_id', 'student_id', 'sess1_att', 'sess1_marks', 'lecture_Att1', 'lecture_Att1_out_of', 'pr_Att1', 'pr_Att1_out_of', 'sess2_att', 'sess2_marks',
+                                     'lecture_Att2', 'lecture_Att2_out_of', 'pr_Att2', 'pr_Att2_out_of', 'sess3_att', 'sess3_marks', 'lecture_Att3_out_of', 'lecture_Att3', 'pr_Att3', 'pr_Att3_out_of', 'block_att', 'block_marks']
+            receivedColumns.sort()
+            actualColumnsInternal.sort()
+            print(df.head())
+            if receivedColumns == actualColumnsInternal:
+                results = []
+                for index, row in df.iterrows():
+                    results.append(
+                        InternalResult(
+                            result_id=str(row['result_id']),
+                            student_id=str(row['student_id']),
+                            exam_id=exam_id,
+                            sess1_att=str(row['sess1_att']),
+                            sess1_marks=int(row['sess1_marks']),
+                            lecture_Att1=int(row['lecture_Att1']),
+                            lecture_Att1_out_of=row['lecture_Att1_out_of'],
+                            pr_Att1=row['pr_Att1'],
+                            pr_Att1_out_of=row['pr_Att1_out_of'],
+                            sess2_att=row['sess2_att'],
+                            sess2_marks=row['sess2_marks'],
+                            lecture_Att2=row['lecture_Att2'],
+                            lecture_Att2_out_of=row['lecture_Att2_out_of'],
+                            pr_Att2=row['pr_Att2'],
+                            pr_Att2_out_of=row['pr_Att2_out_of'],
+                            sess3_att=row['sess3_att'],
+                            sess3_marks=row['sess3_marks'],
+                            lecture_Att3_out_of=row['lecture_Att3_out_of'],
+                            lecture_Att3=row['lecture_Att3'],
+                            pr_Att3=row['pr_Att3'],
+                            pr_Att3_out_of=row['pr_Att3_out_of'],
+                            block_att=row['block_att'],
+                            block_marks=row['block_marks']
+                        )
+                    )
+                InternalResult.objects.bulk_create(results)
+                return HttpResponseRedirect('/staff/exams/')
+            else:
+                c['error'] = "Some fields are missing or not matching in the file!"
+                return render(request, 'exam_details.html', c)
+        elif resultType == 'regular':
+            if file.content_type == 'text/csv':
+                df = pd.read_csv(io.BytesIO(file.read()))
+            elif file.content_type == 'application/vnd.ms-excel':
+                df = pd.read_excel(io.BytesIO(file.read()))
+            else:
+                c['error'] = "File type is not supported!"
+                return render(request, 'exam_details.html', c)
+            receivedColumns = list(df.columns.values)
+            actualColumnsRegular = ['result_id', 'student_id', 'external_marks',
+                                    'sessional_marks', 'practical_marks', 'termwork_marks']
+            receivedColumns.sort()
+            actualColumnsRegular.sort()
+            print(actualColumnsRegular)
+            print(receivedColumns)
+            if actualColumnsRegular == receivedColumns:
+                results = []
+                for index, row in df.iterrows():
+                    results.append(
+                        RegularResult(
+                            result_id=row['result_id'],
+                            student_id=row['student_id'],
+                            exam_id=exam_id,
+                            external_marks=row['external_marks'],
+                            sessional_marks=row['sessional_marks'],
+                            practical_marks=row['practical_marks'],
+                            termwork_marks=row['termwork_marks']
+                        )
+                    )
+                RegularResult.objects.bulk_create(results)
+                return HttpResponseRedirect('/staff/exams/')
+            else:
+                c['error'] = "Some fields are missing or not matching in the file!"
+                return render(request, 'exam_details.html', c)
+        else:
+            return HttpResponseRedirect('/staff/exams/')
+    else:
+        return HttpResponseRedirect('/login/invalidlogin/')
+
+
+@login_required(login_url='/login/')
 def insertExam(request):
     c = {}
     c.update(csrf(request))
@@ -287,10 +401,8 @@ def uploadStudentFile(request):
         file = request.FILES['student_file']
         if file.content_type == 'text/csv':
             df = pd.read_csv(io.BytesIO(file.read()))
-            # print(df.head())
         elif file.content_type == 'application/vnd.ms-excel':
             df = pd.read_excel(io.BytesIO(file.read()))
-            # print(list(df.columns.values))
         else:
             c['error'] = "File type is not supported!"
             return render(request, 'add_student.html', c)
@@ -362,15 +474,6 @@ def uploadStudentFile(request):
                 print(user)
                 form = UserCreationForm(user)
                 form.save()
-                # users.append(
-                #     User(
-                #         username=str(row['student_id']),
-                #         first_name=str(row['first_name']),
-                #         last_name=str(row['last_name']),
-                #         email=str(row['email']),
-                #         password=str(row['password'])
-                #     )
-                # )
                 program = list(
                     filter(lambda x: x.program_code == row['degree'], programs))
                 print(type(row['birth_date']))
@@ -445,8 +548,25 @@ def uploadStudentFile(request):
 
 @login_required(login_url='/login/')
 def downloadSample(request):
-    file_path = '/home/rahul/projects/django/neon/neon/static/assets/files/students.csv'
     file_name = 'students.csv'
+    file_path = os.path.dirname(os.path.abspath(
+        __file__)) + '/../static/assets/files/' + file_name
+    excel = open(file_path, 'r')
+    output = io.StringIO(excel.read())
+    out_content = output.getvalue()
+    output.close()
+    response = HttpResponse(out_content, content_type='text/csv')
+    response['Content-Disposition'] = "attachment; filename=%s" % file_name
+    return response
+
+
+@login_required(login_url='/login/')
+def downloadSampleResult(request):
+    resultType = request.GET.get('resultType', '')
+    print(resultType)
+    file_name = resultType+'_result.csv'
+    file_path = os.path.dirname(os.path.abspath(
+        __file__)) + '/../static/assets/files/' + resultType + '_result.csv'
     excel = open(file_path, 'r')
     output = io.StringIO(excel.read())
     out_content = output.getvalue()

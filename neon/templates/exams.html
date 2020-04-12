@@ -72,7 +72,7 @@
                         </span>
                         <div class="collection">
                             {% for exam in exams %}
-                            <a href="#!" class="collection-item">{{ exam.course.name }} {{ exam.attempt_type }}
+                            <a href="/staff/examDetails/?examID={{exam.exam_id}}" class="collection-item">{{ exam.course.name }} {{ exam.attempt_type }}
                                 {{ exam.session_no }}-SEM {{ exam.batch_year }}</a>
                             {% empty %}
                             <span>No Exams</span>
