@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7526d79-3b5a-46c9-8e5a-f2750ce69b26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/neon/templates/external.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neon/templates/internal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/neon/templates/sem_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/student/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/student/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/student/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/templates/course_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/course_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/templates/exam_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/exam_results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neon/templates/student_edit_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/neon/templates/student_edit_details.html" afterDir="false" />
-    </list>
+    <list default="true" id="d7526d79-3b5a-46c9-8e5a-f2750ce69b26" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +19,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neon/login/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
+            <state relative-caret-position="-596">
               <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -51,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+            <state relative-caret-position="238">
+              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -204,7 +193,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -336,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neon/student/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -360,20 +342,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/neon/login/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
+        <state relative-caret-position="-596">
           <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/external.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neon/templates/internal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
     </entry>
