@@ -50,6 +50,7 @@ class Exam(models.Model):
     attempt_type = models.CharField(max_length=10)
     session_no = models.IntegerField(default=0)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    date = models.DateTimeField()
 
 
 class Student(models.Model):
@@ -103,26 +104,25 @@ class Student(models.Model):
     local_address3 = models.CharField(max_length=30, blank=True, null=True)
     local_city = models.CharField(max_length=30, blank=True, null=True)
     local_mobile_no = models.CharField(max_length=30, blank=True, null=True)
-    courses = models.ManyToManyField(Course)
 
 
 class InternalResult(models.Model):
     result_id = models.CharField(max_length=30, primary_key='true')
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
-    sess1_att = models.IntegerField(default=0)
+    sess1_att = models.CharField(max_length=10)
     sess1_marks = models.IntegerField(default=0)
     lecture_Att1 = models.IntegerField(default=0)
     lecture_Att1_out_of = models.IntegerField(default=0)
     pr_Att1 = models.IntegerField(default=0)
     pr_Att1_out_of = models.IntegerField(default=0)
-    sess2_att = models.IntegerField(default=0)
+    sess2_att = models.CharField(max_length=10)
     sess2_marks = models.IntegerField(default=0)
     lecture_Att2 = models.IntegerField(default=0)
     lecture_Att2_out_of = models.IntegerField(default=0)
     pr_Att2 = models.IntegerField(default=0)
     pr_Att2_out_of = models.IntegerField(default=0)
-    sess3_att = models.IntegerField(default=0)
+    sess3_att = models.CharField(max_length=10)
     sess3_marks = models.IntegerField(default=0)
     lecture_Att3_out_of = models.IntegerField(default=0)
     lecture_Att3 = models.IntegerField(default=0)
@@ -136,7 +136,7 @@ class RegularResult(models.Model):
     result_id = models.CharField(max_length=30, primary_key='true')
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     exam = models.ForeignKey(Exam, on_delete=models.CASCADE)
-    extarnal_marks = models.IntegerField(default=0)
+    external_marks = models.IntegerField(default=0)
     sessional_marks = models.IntegerField(default=0)
     practical_marks = models.IntegerField(default=0)
     termwork_marks = models.IntegerField(default=0)

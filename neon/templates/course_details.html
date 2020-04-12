@@ -60,22 +60,77 @@
         <li><a href="/student/courseDetails">Course Details</a></li>
         <li><a href="/login/logout">Log out</a></li>
     </ul>
-    <div class="container">
-        <div class=row>
-        {% for sem in semesters %}
-        {% if student.session_no >= sem %}
-            <div class="col l6 m6 s12">
+    <div class="">
+        <div class="row">
+            <div class="col l12 m12 s12">
                 <div class="card z-depth-3">
-                    <div class="card-content" style="padding:0px">
-                        <span class="card-title" style="padding: 14px;">
-                            <a href="/student/semcourses/"}}>Semester {{sem}}</a>
+                    <div class="card-content">
+                        <span class="card-title grey lighten-2" style="padding: 14px;">External Marks
                         </span>
+                        <table class="table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Subject Code</th>
+                                    <th>Name</th>
+                                    <th>Alias</th>
+                                    <th>Program</th>
+                                    <th>Rec Status</th>
+                                    <th>Session</th>
+                                    <th>Elective</th>
+                                    <th>Credit</th>
+                                    <th>Th Min Pass1</th>
+                                    <th>Th Min Pass2</th>
+                                    <th>Th Total</th>
+                                    <th>Sess Min Pass1</th>
+                                    <th>Sess Min Pass2</th>
+                                    <th>Sess Total</th>
+                                    <th>Pr Min Pass1</th>
+                                    <th>Pr Min Pass2</th>
+                                    <th>Pr Total</th>
+                                    <th>Tw Min Pass1</th>
+                                    <th>Tw Min Pass2</th>
+                                    <th>Tw Total</th>
+                                    <th>Total Min Pass</th>
+                                    <th>Total Marks</th>
+                                    <th>Syllabus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in courses %}
+                                <tr>
+                                    <td>{{row.subject_code}}</td>
+                                    <td>{{row.name}}</td>
+                                    <td>{{row.alias}}</td>
+                                    <td>{{row.program.name}}</td>
+                                    <td>{{row.rec_status}}</td>
+                                    <td>{{row.session}}</td>
+                                    <td>{{row.elective}}</td>
+                                    <td>{{row.credit}}</td>
+                                    <td>{{row.th_min_pass1}}</td>
+                                    <td>{{row.th_min_pass2}}</td>
+                                    <td>{{row.th_total}}</td>
+                                    <td>{{row.sess_min_pass1}}</td>
+                                    <td>{{row.sess_min_pass2}}</td>
+                                    <td>{{row.sess_total}}</td>
+                                    <td>{{row.pr_min_pass1}}</td>
+                                    <td>{{row.pr_min_pass2}}</td>
+                                    <td>{{row.pr_total}}</td>
+                                    <td>{{row.tw_min_pass1}}</td>
+                                    <td>{{row.tw_min_pass2}}</td>
+                                    <td>{{row.tw_total}}</td>
+                                    <td>{{row.total_min_pass}}</td>
+                                    <td>{{row.total_marks}}</td>
+                                    <td>{{row.syllabus}}</td>
+
+                                </tr>
+                                {% empty %}
+                                <tr><span>No data available!</span></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        {% endif %}
-        {% endfor %}
-
         </div>
     </div>
 

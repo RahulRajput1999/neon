@@ -65,14 +65,14 @@
             <div class="col l12 m12 s12">
                 <div class="card z-depth-3">
                     <div class="card-content">
-                        <span class="card-title grey lighten-2" style="padding: 14px;">
-                            COURSE INFORMATION
+                        <span class="card-title grey lighten-2" style="padding: 14px; font-size: 22px;">
+                            Exams Information
                             <a class="waves-effect waves-light btn right" href="/staff/addExam"><i
-                                    class="material-icons right">add</i>Add Exam</a>
+                                    class="material-icons">add</i></a>
                         </span>
                         <div class="collection">
                             {% for exam in exams %}
-                            <a href="#!" class="collection-item">{{ exam.course.name }} {{ exam.attempt_type }}
+                            <a href="/staff/examDetails/?examID={{exam.exam_id}}" class="collection-item">{{ exam.course.name }} {{ exam.attempt_type }}
                                 {{ exam.session_no }}-SEM {{ exam.batch_year }}</a>
                             {% empty %}
                             <span>No Exams</span>
