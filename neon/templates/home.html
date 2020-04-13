@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load avatar_tags %}
 
 <head>
     <meta charset="UTF-8">
@@ -36,7 +37,8 @@
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <div class="chip">
-                            <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person">
+                            <!-- <img src={% static "assets/images/yuna.jpg" %} alt="Contact Person"> -->
+                            {% avatar user id="user_avatar" %}
                             {{student.student_id}}
                         </div>
                     </li>
@@ -51,7 +53,8 @@
                 <div class="background">
                     <img src={% static "assets/images/office.jpg" %}>
                 </div>
-                <img src={% static "assets/images/yuna.jpg" %} img class="circle" alt="Contact Person">
+                <!-- <img src={% static "assets/images/yuna.jpg" %} class="circle" alt="Contact Person"> -->
+                {% avatar user class="circle" id="user_avatar" %}
                 <a href="#"><span class="white-text name">{{ student.first_name }}</span></a>
                 <a href="#"><span class="white-text email">{{student.student_id}}</span></a>
             </div>
