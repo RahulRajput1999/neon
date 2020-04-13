@@ -6,11 +6,8 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import *
 from django.contrib.auth.forms import PasswordChangeForm
-# from login.forms import *
 from .forms import *
-# from login.models import *
 from .models import *
-# Create your views here.
 
 
 def index(request):  # view to show the login page
