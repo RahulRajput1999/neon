@@ -1,5 +1,8 @@
-from django.urls import path
+from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf.urls import url
 from . import views
+from neon import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -8,5 +11,5 @@ urlpatterns = [
     path('examResults/', views.exam_results),
     path('courseDetails/', views.course_details),
     path('internalResult/', views.internal_result),
-    path('externalResult/', views.external_result)
+    path('externalResult/', views.external_result),
 ]

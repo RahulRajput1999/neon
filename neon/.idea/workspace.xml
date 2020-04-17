@@ -2,8 +2,197 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52edd0e1-6a1d-4d41-81ec-81ae2483b6db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/BdfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/BlpImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/BmpImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/BufrStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ContainerIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/CurImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/DcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/DdsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/EpsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ExifTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/FitsStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/FliImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/FontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/FpxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/FtexImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GbrImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GdImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GifImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GimpGradientFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GimpPaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/GribStubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/Hdf5StubImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/IcnsImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/IcoImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/Image.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageChops.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageCms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageColor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageDraw2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageEnhance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageFilter.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageFont.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageGrab.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageMath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageMode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageMorph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageOps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImagePalette.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImagePath.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageQt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageSequence.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageShow.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageStat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageTk.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageTransform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImageWin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/ImtImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/IptcImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/Jpeg2KImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/JpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/JpegPresets.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/McIdasImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/MicImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/MpegImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/MpoImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/MspImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PSDraw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PaletteFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PalmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PcdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PcfFontFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PcxImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PdfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PdfParser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PixarImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PngImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PpmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PsdImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/PyAccess.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/SgiImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/SpiderImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/SunImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/TarIO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/TgaImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/TiffImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/TiffTags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/WalImageFile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/WebPImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/WmfImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/XVThumbImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/XbmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/XpmImagePlugin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/__main__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_binary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imaging.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imagingcms.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imagingft.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imagingmath.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imagingmorph.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_imagingtk.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_tkinter_finder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_version.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/_webp.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/PIL/features.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow-7.1.1.dist-info/zip-safe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libfreetype-69f25d5e.so.6.17.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libjpeg-ba7bf5af.so.9.4.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/liblcms2-a6801db4.so.2.0.8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/liblzma-99449165.so.5.2.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libopenjp2-b3d7668a.so.2.3.1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libpng16-bedcb7ea.so.16.37.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libtiff-41910f6d.so.5.5.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libwebp-122bd20b.so.7.1.0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libwebpdemux-2db559e5.so.2.0.6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libwebpmux-ec1d5c76.so.3.0.5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/Pillow.libs/libz-a147dcb0.so.1.2.3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/appconf/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/appconf/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/appconf/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/conf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/de/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/de/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/es/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/es/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/fr/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/fr/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/it/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/it/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/ja/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/ja/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/nl/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/nl/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/pl/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/pl/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/pt_BR/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/pt_BR/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/ru/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/ru/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/zh_CN/LC_MESSAGES/django.mo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/locale/zh_CN/LC_MESSAGES/django.po" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/management/commands/rebuild_avatars.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/media/avatar/img/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/migrations/0002_add_verbose_names_to_avatar_fields.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/migrations/0003_auto_20170827_1345.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/providers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/avatar/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/avatar/avatar_tag.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/avatar/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/avatar/change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/avatar/confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/notification/avatar_friend_updated/full.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/notification/avatar_friend_updated/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/notification/avatar_updated/full.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templates/notification/avatar_updated/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/templatetags/avatar_tags.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/avatar/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_appconf-1.0.4.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lib/python3.7/site-packages/django_avatar-5.0.0.dist-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/staff_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/staff_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/neon/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/student/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exam_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/student_edit_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/student_edit_details.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,36 +203,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/student/views.py">
+        <entry file="file://$PROJECT_DIR$/templates/staff_home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="94" selection-start-line="94" selection-end-line="94" />
+            <state relative-caret-position="339">
+              <caret line="123" column="14" lean-forward="true" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/staff/views.py">
+        <entry file="file://$PROJECT_DIR$/templates/course_details.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="43" column="40" lean-forward="true" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+            <state relative-caret-position="-1480" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/student/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/staff_home.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/exam_results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="33" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+            <state relative-caret-position="-1310" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/home.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
               <folding>
+                <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,7 +366,6 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -166,10 +373,11 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -187,39 +395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/course_details.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/add_exam.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="81" column="22" lean-forward="true" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -235,7 +414,17 @@
     <entry file="file://$PROJECT_DIR$/staff/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="43" column="40" lean-forward="true" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -244,10 +433,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/staff_home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+        <state relative-caret-position="339">
+          <caret line="123" column="14" lean-forward="true" selection-start-line="123" selection-start-column="14" selection-end-line="123" selection-end-column="14" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/course_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1480" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/exam_results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1310" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
