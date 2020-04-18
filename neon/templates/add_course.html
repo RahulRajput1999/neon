@@ -73,15 +73,15 @@
                         <span class="card-title grey lighten-2" style="padding: 14px;">Course Information</span>
                         <div class="row">
                             <div class="input-field col l6 m6 s12">
-                                <input id="subject_code" name="subject_code" type="text" class="validate" required>
+                                <input id="subject_code" name="subject_code" type="text" value="{{form.subject_code.value}}" class="validate" required>
                                 <label for="subject_code">Subject Code</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="name" name="name" type="text" class="validate" required>
+                                <input id="name" name="name" type="text" value="{{form.name.value}}" class="validate" required>
                                 <label for="name">Name</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="alias" name="alias" type="text" class="validate" required>
+                                <input id="alias" name="alias" type="text" value="{{form.alias.value}}" class="validate" required>
                                 <label for="alias">Alias</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
@@ -96,12 +96,13 @@
                                 <label for="program">Program</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="rec_status" name="rec_status" type="text" class="validate" required>
+                                <input id="rec_status" name="rec_status" type="text" value="{{form.rec_status.value}}" class="validate" required>
                                 <label for="rec_status">Rec. Status</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="session" name="session" type="number" class="validate" required>
+                                <input id="session" name="session" type="number" value="{{form.session.value}}" class="validate" required>
                                 <label for="session">Session</label>
+                                <span style="color:red;padding-left:5px;font-size:15px">{{form.session.errors}}</span>
                             </div>
                             <div class="input-field col l6 m6 s12">
                                 <select id="elective" name="elective">
@@ -113,67 +114,68 @@
 
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="credit" name="credit" type="number" class="validate" required>
+                                <input id="credit" name="credit" type="number" value="{{form.credit.value}}" class="validate" required>
                                 <label for="credit">Credit</label>
+                                <span style="color:red;padding-left:5px;font-size:15px">{{form.credit.errors}}</span>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="th_min_pass1" name="th_min_pass1" type="number" class="validate" required>
+                                <input id="th_min_pass1" name="th_min_pass1" value="{{form.th_min_pass2.value}}" type="number" class="validate" required>
                                 <label for="th_min_pass1">Th Min Pass1</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="th_min_pass2" name="th_min_pass2" type="number" class="validate" required>
+                                <input id="th_min_pass2" name="th_min_pass2" value="{{form.th_min_pass2.value}}" type="number" class="validate" required>
                                 <label for="th_min_pass2">Th Min Pass2</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="th_total" name="th_total" type="number" class="validate" required>
+                                <input id="th_total" name="th_total" value="{{form.th_total.value}}" type="number" class="validate" required>
                                 <label for="th_total">Th Total</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="sess_min_pass1" name="sess_min_pass1" type="number" class="validate" required>
+                                <input id="sess_min_pass1" name="sess_min_pass1" value="{{form.sess_min_pass1.value}}" type="number" class="validate" required>
                                 <label for="sess_min_pass1">Sess Min Pass1</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="sess_min_pass2" name="sess_min_pass2" type="number" class="validate" required>
+                                <input id="sess_min_pass2" name="sess_min_pass2" value="{{form.sess_min_pass2.value}}" type="number" class="validate" required>
                                 <label for="sess_min_pass2">Sess Min Pass2</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="sess_total" name="sess_total" type="number" class="validate" required>
+                                <input id="sess_total" name="sess_total" value="{{form.sess_total.value}}" type="number" class="validate" required>
                                 <label for="sess_total">Sess Total</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="pr_min_pass1" name="pr_min_pass1" type="number" class="validate" required>
+                                <input id="pr_min_pass1" name="pr_min_pass1" value="{{form.pr_min_pass1.value}}" type="number" class="validate" required>
                                 <label for="pr_min_pass1">Pr Min Pass1</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="pr_min_pass2" name="pr_min_pass2" type="number" class="validate" required>
+                                <input id="pr_min_pass2" name="pr_min_pass2" value="{{form.pr_min_pass2.value}}" type="number" class="validate" required>
                                 <label for="pr_min_pass2">Pr Min Pass2</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="pr_total" name="pr_total" type="number" class="validate" required>
+                                <input id="pr_total" name="pr_total" value="{{form.pr_total.value}}" type="number" class="validate" required>
                                 <label for="pr_total">Pr Total</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="tw_min_pass1" name="tw_min_pass1" type="number" class="validate" required>
+                                <input id="tw_min_pass1" name="tw_min_pass1" value="{{form.tw_min_pass1.value}}" type="number" class="validate" required>
                                 <label for="tw_min_pass1">Tw Min Pass1</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="tw_min_pass2" name="tw_min_pass2" type="number" class="validate" required>
+                                <input id="tw_min_pass2" name="tw_min_pass2" value="{{form.tw_min_pass2.value}}" type="number" class="validate" required>
                                 <label for="tw_min_pass2">Tw Min Pass2</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="tw_total" name="tw_total" type="number" class="validate" required>
+                                <input id="tw_total" name="tw_total" value="{{form.tw_total.value}}" type="number" class="validate" required>
                                 <label for="tw_total">Tw Total</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="total_min_pass" name="total_min_pass" type="number" class="validate" required>
+                                <input id="total_min_pass" name="total_min_pass" value="{{form.total_min_pass.value}}" type="number" class="validate" required>
                                 <label for="total_min_pass">Total Min Pass</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="total_marks" name="total_marks" type="number" class="validate" required>
+                                <input id="total_marks" name="total_marks" value="{{form.total_marks.value}}" type="number" class="validate" required>
                                 <label for="total_marks">Total Marks</label>
                             </div>
                             <div class="input-field col l6 m6 s12">
-                                <input id="syllabus" name="syllabus" type="text" class="validate" required>
+                                <input id="syllabus" name="syllabus" value="{{form.syllabus.value}}" type="text" class="validate">
                                 <label for="syllabus">Syllabus</label>
                             </div>
                         </div>

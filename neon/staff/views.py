@@ -6,6 +6,7 @@ from django.template.context_processors import csrf
 from django.contrib.auth import *
 from django.contrib.auth.models import User
 from login.models import *
+from login.forms import CourseForm
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from djongo.models import Count
 import io
@@ -145,35 +146,45 @@ def addCourse(request):
 def insertCourse(request):
     c = {}
     c.update(csrf(request))
-    subject_code = request.POST.get('subject_code', '')
-    name = request.POST.get('name', '')
-    alias = request.POST.get('alias', '')
-    program = request.POST.get('program', '')
-    rec_status = request.POST.get('rec_status', '')
-    session = request.POST.get('session', 0)
-    elective = request.POST.get('elective', '')
-    credit = request.POST.get('credit', 0)
-    th_min_pass1 = request.POST.get('th_min_pass1', 0)
-    th_min_pass2 = request.POST.get('th_min_pass2', 0)
-    th_total = request.POST.get('th_total', 0)
-    sess_min_pass1 = request.POST.get('sess_min_pass1', 0)
-    sess_min_pass2 = request.POST.get('sess_min_pass2', 0)
-    sess_total = request.POST.get('sess_total', 0)
-    pr_min_pass1 = request.POST.get('pr_min_pass1', 0)
-    pr_min_pass2 = request.POST.get('pr_min_pass2', 0)
-    pr_total = request.POST.get('pr_total', 0)
-    tw_min_pass1 = request.POST.get('tw_min_pass1', 0)
-    tw_min_pass2 = request.POST.get('tw_min_pass2', 0)
-    tw_total = request.POST.get('tw_total', 0)
-    total_min_pass = request.POST.get('total_min_pass', 0)
-    total_marks = request.POST.get('total_marks', 0)
-    syllabus = request.POST.get('syllabus', '--')
-    programObj = Program.objects.filter(program_code=program)[0]
-    course = Course(subject_code=subject_code, name=name, alias=alias, program=programObj, rec_status=rec_status, session=session, elective=elective, credit=credit, th_min_pass1=th_min_pass1, th_min_pass2=th_min_pass2, th_total=th_total, sess_min_pass1=sess_min_pass1,
-                    sess_min_pass2=sess_min_pass2, sess_total=sess_total, pr_min_pass1=pr_min_pass1, pr_min_pass2=pr_min_pass2, pr_total=pr_total, tw_min_pass1=tw_min_pass1, tw_min_pass2=tw_min_pass2, tw_total=tw_total, total_min_pass=total_min_pass, total_marks=total_marks, syllabus=syllabus)
-    course.save()
-    return HttpResponseRedirect('/staff/courses')
-
+    details = CourseForm(request.POST)
+    if details.is_valid():
+        subject_code = request.POST.get('subject_code', '')
+        name = request.POST.get('name', '')
+        alias = request.POST.get('alias', '')
+        program = request.POST.get('program', '')
+        rec_status = request.POST.get('rec_status', '')
+        session = request.POST.get('session', 0)
+        elective = request.POST.get('elective', '')
+        credit = request.POST.get('credit', 0)
+        th_min_pass1 = request.POST.get('th_min_pass1', 0)
+        th_min_pass2 = request.POST.get('th_min_pass2', 0)
+        th_total = request.POST.get('th_total', 0)
+        sess_min_pass1 = request.POST.get('sess_min_pass1', 0)
+        sess_min_pass2 = request.POST.get('sess_min_pass2', 0)
+        sess_total = request.POST.get('sess_total', 0)
+        pr_min_pass1 = request.POST.get('pr_min_pass1', 0)
+        pr_min_pass2 = request.POST.get('pr_min_pass2', 0)
+        pr_total = request.POST.get('pr_total', 0)
+        tw_min_pass1 = request.POST.get('tw_min_pass1', 0)
+        tw_min_pass2 = request.POST.get('tw_min_pass2', 0)
+        tw_total = request.POST.get('tw_total', 0)
+        total_min_pass = request.POST.get('total_min_pass', 0)
+        total_marks = request.POST.get('total_marks', 0)
+        syllabus = request.POST.get('syllabus', '--')
+        programObj = Program.objects.filter(program_code=program)[0]
+        course = Course(subject_code=subject_code, name=name, alias=alias, program=programObj, rec_status=rec_status, session=session, elective=elective, credit=credit, th_min_pass1=th_min_pass1, th_min_pass2=th_min_pass2, th_total=th_total, sess_min_pass1=sess_min_pass1,
+                        sess_min_pass2=sess_min_pass2, sess_total=sess_total, pr_min_pass1=pr_min_pass1, pr_min_pass2=pr_min_pass2, pr_total=pr_total, tw_min_pass1=tw_min_pass1, tw_min_pass2=tw_min_pass2, tw_total=tw_total, total_min_pass=total_min_pass, total_marks=total_marks, syllabus=syllabus)
+        course.save()
+        return HttpResponseRedirect('/staff/courses')
+    else:
+        d={}
+        programs = Program.objects.all()
+        d['programs'] = programs
+        d['first_name'] = request.session['first_name']
+        d['last_name'] = request.session['last_name']
+        d['email'] = request.session['email']
+        d['form'] = details
+        return render(request, "add_course.html", d)
 
 @login_required(login_url='/login/')
 @user_passes_test(lambda user: user.is_staff, login_url='/student/', redirect_field_name=None)
