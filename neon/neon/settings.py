@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'staff.apps.StaffConfig',
     'student.apps.StudentConfig',
     'avatar',
-    'neon.todoApp.apps.TodoappConfig',
+    'todoApp.apps.TodoappConfig',
 ]
 
 MIDDLEWARE = [
