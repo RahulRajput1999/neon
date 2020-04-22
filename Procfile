@@ -1,1 +1,1 @@
-web: gunicorn neon.wsgi --log-file -
+web: gunicorn neon.neon.wsgi --log-file -
