@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'login.apps.LoginConfig',
     'staff.apps.StaffConfig',
+    'student.apps.StudentConfig',
     'avatar',
+    'todoApp.apps.TodoappConfig',
 ]
 
 MIDDLEWARE = [
@@ -104,6 +106,16 @@ DATABASES = {
                 'port': 27017,
         }
     }
+}
+
+CHANNEL_LAYERS = {
+      'default': {
+      'BACKEND': 'asgi_redis.RedisChannelLayer',
+      'CONFIG': {
+         'hosts': [('localhost', 6379)],
+    },
+    'ROUTING': 'routing.application',
+   },
 }
 
 

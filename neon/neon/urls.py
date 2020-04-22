@@ -26,5 +26,6 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('staff/', include('staff.urls')),
     path('avatar/', include('avatar.urls')),
+    path('todoApp/',include('todoApp.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
