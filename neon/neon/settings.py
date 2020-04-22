@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -98,12 +99,12 @@ DATABASES = {
         },
         'NAME': 'neon',
         'CLIENT': {
-                # 'host': 'mongodb://neon:neon1999@ds153413.mlab.com:53413/neon?retryWrites=false',
-                # 'port': 63028,
-                # 'username': 'neon',
-                # 'password': 'neon1999',
-                'host': 'localhost',
-                'port': 27017,
+                'host': 'mongodb://neon:neon1999@ds159546.mlab.com:59546/neon?retryWrites=false',
+                'port': 63028,
+                'username': 'neon',
+                'password': 'neon1999',
+                # 'host': 'localhost',
+                # 'port': 27017,
         }
     }
 }
@@ -111,9 +112,7 @@ DATABASES = {
 CHANNEL_LAYERS = {
       'default': {
       'BACKEND': 'asgi_redis.RedisChannelLayer',
-      'CONFIG': {
-         'hosts': [('localhost', 6379)],
-    },
+      'CONFIG': {pip freeze > requirements.txt
     'ROUTING': 'routing.application',
    },
 }
@@ -131,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
+    },pip freeze > requirements.txt
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
@@ -156,3 +155,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
