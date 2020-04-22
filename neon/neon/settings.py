@@ -109,13 +109,6 @@ DATABASES = {
     }
 }
 
-CHANNEL_LAYERS = {
-      'default': {
-      'BACKEND': 'asgi_redis.RedisChannelLayer',
-      'CONFIG': {pip freeze > requirements.txt
-    'ROUTING': 'routing.application',
-   },
-}
 
 
 # Password validation
