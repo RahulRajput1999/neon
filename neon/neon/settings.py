@@ -42,9 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'neon.login.apps.LoginConfig',
-    'neon.staff.apps.StaffConfig',
-    'neon.student.apps.StudentConfig',
+    'login.apps.LoginConfig',
+    'staff.apps.StaffConfig',
+    'student.apps.StudentConfig',
     'avatar',
     'neon.todoApp.apps.TodoappConfig',
 ]
