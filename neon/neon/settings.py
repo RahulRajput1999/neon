@@ -42,11 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login.apps.LoginConfig',
-    'staff.apps.StaffConfig',
-    'student.apps.StudentConfig',
+    'neon.login.apps.LoginConfig',
+    'neon.staff.apps.StaffConfig',
+    'neon.student.apps.StudentConfig',
     'avatar',
-    'todoApp.apps.TodoappConfig',
+    'neon.todoApp.apps.TodoappConfig',
 ]
 
 MIDDLEWARE = [
