@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -26,13 +26,14 @@ SECRET_KEY = '01ip$+k915+j)_c!$6!e!uyvmh886-ldtrxk#e^n2z5ss-vlth'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,16 +43,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'neon.login.apps.LoginConfig',
-    'neon.staff.apps.StaffConfig',
-    'neon.student.apps.StudentConfig',
+    'login.apps.LoginConfig',
+    'staff.apps.StaffConfig',
+    'student.apps.StudentConfig',
     'avatar',
-    'neon.todoApp.apps.TodoappConfig',
+    'todoApp.apps.TodoappConfig',
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -99,16 +100,15 @@ DATABASES = {
         },
         'NAME': 'neon',
         'CLIENT': {
-                'host': 'mongodb://neon:neon1999@ds159546.mlab.com:59546/neon?retryWrites=false',
-                'port': 63028,
-                'username': 'neon',
-                'password': 'neon1999',
-                # 'host': 'localhost',
-                # 'port': 27017,
+                # 'host': 'mongodb://neon:neon1999@ds159546.mlab.com:59546/neon?retryWrites=false',
+                # 'port': 63028,
+                # 'username': 'neon',
+                # 'password': 'neon1999',
+                'host': 'localhost',
+                'port': 27017,
         }
     }
 }
-
 
 
 # Password validation
@@ -148,4 +148,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

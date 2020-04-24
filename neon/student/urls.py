@@ -6,10 +6,10 @@ from neon import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('editDetails/', views.edit_details),
-    path('saveDetails/', views.save_details),
-    path('examResults/', views.exam_results),
-    path('courseDetails/', views.course_details),
-    path('internalResult/', views.internal_result),
-    path('externalResult/', views.external_result),
+    path('editDetails/', views.edit_details, name='editDetails'),
+    path('saveDetails/', views.save_details, name='saveDetails'),
+    path('examResults/', views.exam_results, name='examResults'),
+    path('courseDetails/', views.course_details,name='courseDetails'),
+    path('internalResult/', views.internal_result, name='internalResult'),
+    path('externalResult/', views.external_result, name='externalResult'),
 ]

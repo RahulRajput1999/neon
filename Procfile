@@ -1,1 +1,0 @@
-web: gunicorn neon.neon.wsgi --log-file -
