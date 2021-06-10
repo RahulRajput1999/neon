@@ -21,7 +21,7 @@ cymem==2.0.3
 daphne==2.4.1
 dataclasses==0.6
 dj-database-url==0.5.0
-Django==2.2.11
+Django==2.2.24
 django-appconf==1.0.4
 django-avatar==5.0.0
 djangorestframework==3.11.0
